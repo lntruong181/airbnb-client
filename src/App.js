@@ -1,5 +1,10 @@
+import MainLayout from '@/layouts';
 function App() {
-  return <div className='App'>Hello world</div>;
+  return (
+    <div className='App'>
+      <MainLayout />
+    </div>
+  );
 }
 
 export default App;
