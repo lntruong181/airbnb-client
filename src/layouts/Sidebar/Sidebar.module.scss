@@ -1,0 +1,148 @@
+.container {
+  height: 80px;
+  width: 100%;
+  min-width: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 80px;
+
+  border-bottom: 1px solid var(--grey-color);
+}
+
+// LEFT AREA
+
+.logo {
+  cursor: pointer;
+
+  &-icon {
+    font-size: 3.5rem;
+    color: var(--heading-color);
+    margin-right: 5px;
+  }
+}
+.heading-text {
+  font-size: 2.5rem;
+  color: var(--heading-color);
+  user-select: none;
+}
+
+//  CENTER AREA
+
+.item {
+  font-size: 1.4rem;
+  color: var(--text-color);
+
+  display: flex;
+  align-items: center;
+  font-family: var(--cereal-book);
+}
+.box {
+  height: 48px;
+  width: 352px;
+  padding: 10px 10px 10px 0;
+  border: 1px solid var(--grey-color);
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: none;
+  }
+  &-btn {
+    min-height: 48px;
+    flex: 1;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    span {
+      font-weight: 600;
+    }
+  }
+  &-btn:nth-child(1)::after,
+  &-btn:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 1px;
+    height: 50%;
+    transform: translate(0, 50%);
+    background-color: var(--grey-color);
+  }
+  &-btn:nth-child(3) {
+    color: #717171;
+    font-weight: 400;
+  }
+
+  &-search {
+    color: white;
+    background-color: var(--heading-color);
+    border-radius: 50%;
+    padding: 8px;
+    border: none;
+  }
+}
+
+// RIGHT AREA
+.home {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+
+  padding: 10px 20px;
+
+  border-radius: 30px;
+  border: none;
+
+  transition: background 0.2s ease;
+
+  &:hover {
+    background-color: var(--light-grey);
+  }
+}
+.language {
+  background: transparent;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+
+  transition: background 0.2s ease;
+
+  &:hover {
+    background-color: var(--light-grey);
+  }
+}
+.user {
+  width: 77px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5px;
+
+  border: 1px solid var(--grey-color);
+  border-radius: 30px;
+
+  transition: box-shadow 0.2s ease;
+
+  span:nth-child(1) {
+    margin-left: 5px;
+  }
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  }
+}
+.icon {
+  font-size: 2rem;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+}

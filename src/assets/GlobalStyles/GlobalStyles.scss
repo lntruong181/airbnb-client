@@ -1,1 +1,30 @@
 @import url(reset.scss);
+:root {
+  --cereal-bold: cerealBold;
+  --cereal-book: cerealBook;
+  --cereal-medium: cerealMedium;
+  // text color
+  --text-color: rgb(34, 34, 34);
+  --heading-color: #ff385c;
+
+  // border color
+  --grey-color: #dddddd;
+  --light-grey: #f8f7f7;
+  color: rgb(113, 113, 113);
+}
+
+// implement font
+
+@font-face {
+  font-family: cerealBold;
+  src: url(./../fonts/Airbnb_Cereal-Bold.woff2);
+}
+@font-face {
+  font-family: cerealBook;
+  src: url(./../fonts/Airbnb_Cereal-Book.woff2);
+}
+
+@font-face {
+  font-family: cerealMedium;
+  src: url(./../fonts/Airbnb_Cereal-Medium.woff2);
+}

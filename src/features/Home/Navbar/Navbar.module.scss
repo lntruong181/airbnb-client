@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  list-style-type: none;
+
+  gap: 32px;
+}
+.radio-item {
+  color: black;
+  padding: 5px 0;
+  border: 1px solid transparent;
+
+  transition: border 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  &:hover {
+    border-bottom-color: var(--grey-color);
+  }
+  &-icon {
+    font-size: 3rem;
+  }
+  &-text {
+    font-size: 1.4rem;
+  }
+}
+.active {
+  border-bottom-color: black;
+}
+.next {
+  background-color: transparent;
+  padding: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.438);
+}
