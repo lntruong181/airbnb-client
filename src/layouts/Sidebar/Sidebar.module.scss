@@ -33,12 +33,11 @@
 
 .item {
   font-size: 1.4rem;
-  color: var(--text-color);
 
   display: flex;
   align-items: center;
-  font-family: var(--cereal-book);
 }
+
 .box {
   height: 48px;
   width: 352px;
@@ -75,7 +74,7 @@
     background-color: var(--grey-color);
   }
   &-btn:nth-child(3) {
-    color: #717171;
+    color: var(--icon-grey);
     font-weight: 400;
   }
 
@@ -114,6 +113,8 @@
 
   transition: background 0.2s ease;
 
+  cursor: pointer;
+
   &:hover {
     background-color: var(--light-grey);
   }
@@ -131,6 +132,8 @@
   border-radius: 30px;
 
   transition: box-shadow 0.2s ease;
+
+  cursor: pointer;
 
   span:nth-child(1) {
     margin-left: 5px;

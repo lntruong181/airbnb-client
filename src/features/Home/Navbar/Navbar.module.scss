@@ -5,43 +5,120 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 20px;
+
+  gap: 20px;
 }
 
 .radio-list {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   list-style-type: none;
 
   gap: 32px;
+
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
 }
 .radio-item {
-  color: black;
+  min-width: fit-content;
+
   padding: 5px 0;
   border: 1px solid transparent;
 
-  transition: border 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  &:hover {
-    border-bottom-color: var(--grey-color);
-  }
-  &-icon {
-    font-size: 3rem;
-  }
-  &-text {
-    font-size: 1.4rem;
+  flex-basis: 50%;
+
+  transition: border 0.2s ease;
+
+  cursor: pointer;
+
+  &:active {
+    .radio-icon {
+      transform: scale(0.95);
+    }
+    .radio-text {
+      transform: translate(0, -2px) scale(0.95);
+    }
   }
 }
+
+.non-active:hover {
+  border-bottom-color: var(--grey-color);
+  .radio-image {
+    filter: contrast(100);
+  }
+  .radio-text {
+    color: #000000;
+  }
+}
+
 .active {
   border-bottom-color: black;
+
+  .radio-image {
+    filter: contrast(100);
+  }
+
+  .radio-text {
+    color: #000000;
+  }
 }
+
+.radio-icon {
+  width: 24px;
+  height: 24px;
+
+  transition: scale 0.2s ease;
+}
+
+.radio-image {
+  max-width: 100%;
+  height: auto;
+  transition: filter 200ms ease, transform 200ms ease;
+  user-select: none;
+
+  filter: contrast(calc(13 / 44));
+}
+
+.radio-text {
+  color: var(--icon-grey);
+  font-size: 1.2rem;
+
+  user-select: none;
+
+  transition: all 200ms ease;
+}
+
 .next {
   background-color: transparent;
   padding: 7px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.438);
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: scale(1.04);
+  }
+}
+.filter {
+  width: 90px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: transparent;
+  border: 1px solid var(--grey-color);
+  border-radius: 10px;
+  cursor: pointer;
 }

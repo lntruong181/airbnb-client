@@ -4,13 +4,19 @@
   --cereal-book: cerealBook;
   --cereal-medium: cerealMedium;
   // text color
-  --text-color: rgb(34, 34, 34);
+  --text-color: #222222;
   --heading-color: #ff385c;
 
   // border color
   --grey-color: #dddddd;
   --light-grey: #f8f7f7;
-  color: rgb(113, 113, 113);
+  --icon-grey: #717171;
+}
+
+body {
+  font-family: var(--cereal-book);
+  color: var(--text-color);
+  font-size: 1.2rem;
 }
 
 // implement font

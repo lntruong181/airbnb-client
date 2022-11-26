@@ -12,7 +12,7 @@ import styles from './Sidebar.module.scss';
 const cx = classNames.bind(styles);
 const Sidebar = () => {
   return (
-    <nav className={cx('container')}>
+    <section className={cx('container')}>
       <div className={cx('item', 'logo')}>
         <span className={cx('logo-icon')}>
           <AirbnbIcon />
@@ -50,7 +50,7 @@ const Sidebar = () => {
           <img src={images.userIcon} className={cx('avatar')}></img>
         </div>
       </div>
-    </nav>
+    </section>
   );
 };
 export default Sidebar;
