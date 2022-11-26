@@ -8,6 +8,7 @@ import mountainIcon from './mountain.jpg';
 import windowIcon from './window.jpg';
 import adaptedIcon from './adapted.jpg';
 import filterIcon from './filter.png';
+import heartIcon from './heart.png';
 
 const images = {
   userIcon,
@@ -20,5 +21,6 @@ const images = {
   windowIcon,
   adaptedIcon,
   filterIcon,
+  heartIcon,
 };
 export default images;

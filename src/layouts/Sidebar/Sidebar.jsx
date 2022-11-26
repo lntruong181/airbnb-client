@@ -1,6 +1,7 @@
 import images from '@/assets/Images';
 import { UserIcon } from '@/assets/svgs';
 import Button from '@/components/Button';
+import Image from '@/components/Image';
 import {
   AirbnbIcon,
   GlobalIcon,
@@ -36,10 +37,12 @@ const Sidebar = () => {
         <Button className={cx('language')} isRound={true} shadowOnHover={true}>
           <GlobalIcon />
         </Button>
-        <div className={cx('user')}>
+        <Button className={cx('user')}>
           <HamburgerIcon />
-          <img src={images.userIcon} className={cx('avatar')}></img>
-        </div>
+          <span className={cx('user-avatar')}>
+            <Image src={images.userIcon} alt={'user-icon'}></Image>
+          </span>
+        </Button>
       </div>
     </section>
   );

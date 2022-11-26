@@ -7,6 +7,7 @@ import Button from '@/components/Button';
 import { RightArrowIcon } from '@/enum/icon.enum';
 
 import styles from './Navbar.module.scss';
+import Image from '@/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +19,11 @@ const RadioItem = ({ data, isSelected, setSelected }) => {
   return (
     <li onClick={handleClick} className={cx('radio-item', activeClassName)}>
       <span className={cx('radio-icon')}>
-        <img className={cx('radio-image')} src={data.icon} />
+        <Image
+          className={cx('radio-image')}
+          src={data.icon}
+          alt='activity-icon'
+        />
       </span>
       <span className={cx('radio-text')}>{data.text}</span>
     </li>
@@ -226,7 +231,7 @@ const Navbar = () => {
       </div>
       <button className={cx('filter')}>
         <span className={cx('filter-icon')}>
-          <img src={images.filterIcon}></img>
+          <Image src={images.filterIcon} alt='filter-icon'></Image>
         </span>
         <span className={cx('filter-text')}>Filters</span>
       </button>

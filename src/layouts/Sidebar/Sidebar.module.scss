@@ -103,7 +103,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   padding: 5px;
 
@@ -114,14 +114,11 @@
 
   cursor: pointer;
 
-  span:nth-child(1) {
-    margin-left: 5px;
-  }
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   }
-}
-.avatar {
-  width: 30px;
-  height: 30px;
+  &-avatar {
+    width: 30px;
+    height: 30px;
+  }
 }
