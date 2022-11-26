@@ -3,7 +3,7 @@ import { SiAirbnb } from 'react-icons/si';
 import { BiSearch } from 'react-icons/bi';
 import { RiGlobalLine } from 'react-icons/ri';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { HiOutlineKey } from 'react-icons/hi';
+import { HiOutlineKey, HiOutlineHeart } from 'react-icons/hi';
 import { SlArrowRight } from 'react-icons/sl';
 
 export const FilterIcon = () => <BsFilterRight />;
@@ -13,3 +13,4 @@ export const GlobalIcon = () => <RiGlobalLine />;
 export const HamburgerIcon = () => <GiHamburgerMenu />;
 export const KeyIcon = () => <HiOutlineKey />;
 export const RightArrowIcon = () => <SlArrowRight />;
+export const HeartIcon = () => <HiOutlineHeart />;

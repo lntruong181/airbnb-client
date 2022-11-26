@@ -1,5 +1,6 @@
 import images from '@/assets/Images';
 import { UserIcon } from '@/assets/svgs';
+import Button from '@/components/Button';
 import {
   AirbnbIcon,
   GlobalIcon,
@@ -21,32 +22,22 @@ const Sidebar = () => {
       </div>
 
       <div className={cx('item', 'box')}>
-        <button className={cx('box-btn')}>
-          <span>Anywhere</span>
-        </button>
-        <button className={cx('box-btn')}>
-          <span>Any week</span>
-        </button>
-        <button className={cx('box-btn')}>
-          <span>Add guests</span>
-        </button>
-        <button className={cx('box-search')}>
+        <Button className={cx('box-btn')}>Anywhere</Button>
+        <Button className={cx('box-btn')}>Any week</Button>
+        <Button className={cx('box-btn')}>Add guests</Button>
+        <Button className={cx('box-search')} color={'red'} isRound={true}>
           <SearchIcon />
-        </button>
+        </Button>
       </div>
       <div className={cx('item')}>
-        <a href='#' className={cx('home')}>
+        <Button className={cx('home')} shadowOnHover={true}>
           Airbnb your home
-        </a>
-        <button className={cx('language')}>
-          <span className={cx('icon')}>
-            <GlobalIcon />
-          </span>
-        </button>
+        </Button>
+        <Button className={cx('language')} isRound={true} shadowOnHover={true}>
+          <GlobalIcon />
+        </Button>
         <div className={cx('user')}>
-          <span className={cx('icon')}>
-            <HamburgerIcon />
-          </span>
+          <HamburgerIcon />
           <img src={images.userIcon} className={cx('avatar')}></img>
         </div>
       </div>

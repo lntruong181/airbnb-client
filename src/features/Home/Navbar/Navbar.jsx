@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import classNames from 'classnames/bind';
 
 import images from '@/assets/Images';
+import Button from '@/components/Button';
 import { RightArrowIcon } from '@/enum/icon.enum';
 
 import styles from './Navbar.module.scss';
@@ -219,9 +220,9 @@ const Navbar = () => {
         ))}
       </ul>
       <div>
-        <button className={cx('next')}>
+        <Button className={cx('next')} isRound={true} scaleOnHover={true}>
           <RightArrowIcon />
-        </button>
+        </Button>
       </div>
       <button className={cx('filter')}>
         <span className={cx('filter-icon')}>

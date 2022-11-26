@@ -97,17 +97,8 @@
 }
 
 .next {
-  background-color: transparent;
-  padding: 7px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.438);
-
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transform: scale(1.04);
-  }
+  border: 1px solid rgba(0, 0, 0, 0.438) !important;
+  padding: 8px;
 }
 .filter {
   width: 90px;

@@ -44,22 +44,14 @@
   padding: 10px 10px 10px 0;
   border: 1px solid var(--grey-color);
   border-radius: 30px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
   transition: box-shadow 0.2s ease;
 
   &:hover {
-    box-shadow: none;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
   }
   &-btn {
-    min-height: 48px;
     flex: 1;
-    position: relative;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    span {
-      font-weight: 600;
-    }
+    font-weight: 600;
   }
   &-btn:nth-child(1)::after,
   &-btn:nth-child(2)::after {
@@ -80,19 +72,15 @@
 
   &-search {
     color: white;
-    background-color: var(--heading-color);
-    border-radius: 50%;
     padding: 8px;
-    border: none;
   }
 }
 
 // RIGHT AREA
 .home {
+  font-weight: 600;
   font-size: 1.4rem;
   color: var(--text-color);
-  font-weight: 600;
-  text-decoration: none;
 
   padding: 10px 20px;
 
@@ -106,18 +94,9 @@
   }
 }
 .language {
-  background: transparent;
+  font-size: 2rem;
   padding: 10px;
-  border: none;
-  border-radius: 30px;
-
-  transition: background 0.2s ease;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--light-grey);
-  }
+  margin: 0 5px;
 }
 .user {
   width: 77px;
@@ -141,9 +120,6 @@
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   }
-}
-.icon {
-  font-size: 2rem;
 }
 .avatar {
   width: 30px;

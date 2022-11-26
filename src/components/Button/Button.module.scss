@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+.red {
+  background-color: var(--heading-color);
+}
+.round {
+  border-radius: 50%;
+}
+.shadow:hover {
+  background-color: var(--light-grey);
+}
+.scale:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: scale(1.04);
+}
