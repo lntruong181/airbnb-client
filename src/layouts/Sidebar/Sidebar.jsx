@@ -1,5 +1,6 @@
+import classNames from 'classnames/bind';
+
 import images from '@/assets/Images';
-import { UserIcon } from '@/assets/svgs';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
 import {
@@ -8,10 +9,12 @@ import {
   HamburgerIcon,
   SearchIcon,
 } from '@/enum/icon.enum';
-import classNames from 'classnames/bind';
+
 import styles from './Sidebar.module.scss';
+import MenuTooltip from '@/components/MenuTooltip';
 
 const cx = classNames.bind(styles);
+
 const Sidebar = () => {
   return (
     <section className={cx('container')}>
@@ -37,12 +40,14 @@ const Sidebar = () => {
         <Button className={cx('language')} isRound={true} shadowOnHover={true}>
           <GlobalIcon />
         </Button>
-        <Button className={cx('user')}>
-          <HamburgerIcon />
-          <span className={cx('user-avatar')}>
-            <Image src={images.userIcon} alt={'user-icon'}></Image>
-          </span>
-        </Button>
+        <MenuTooltip>
+          <Button className={cx('user')}>
+            <HamburgerIcon />
+            <span className={cx('user-avatar')}>
+              <Image src={images.userIcon} alt={'user-icon'}></Image>
+            </span>
+          </Button>
+        </MenuTooltip>
       </div>
 
       <div className={cx('where')}>
