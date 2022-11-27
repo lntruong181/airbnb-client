@@ -34,8 +34,8 @@ const Carousel = ({ children }) => {
       }}
       modules={[EffectCreative, Navigation, Pagination]}
     >
-      {children.map((item) => (
-        <SwiperSlide>{item}</SwiperSlide>
+      {children.map((item, index) => (
+        <SwiperSlide key={index}>{item}</SwiperSlide>
       ))}
     </Swiper>
   );

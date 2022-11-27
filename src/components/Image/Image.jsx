@@ -8,7 +8,12 @@ const cx = classNames.bind(styles);
 const Image = ({ src, alt, className }) => {
   return (
     <div>
-      <img className={cx('container', className)} src={src} alt={alt}></img>
+      <img
+        loading='lazy'
+        className={cx('container', className)}
+        src={src}
+        alt={alt}
+      ></img>
     </div>
   );
 };

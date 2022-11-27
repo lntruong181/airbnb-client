@@ -11,6 +11,14 @@
   --grey-color: #dddddd;
   --light-grey: #f8f7f7;
   --icon-grey: #717171;
+
+  --default-padding: 0 80px;
+}
+
+@media screen and (max-width: 850px) {
+  :root {
+    --default-padding: 0 24px;
+  }
 }
 
 body {

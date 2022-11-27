@@ -44,6 +44,18 @@ const Sidebar = () => {
           </span>
         </Button>
       </div>
+
+      <div className={cx('where')}>
+        <Button className={cx('search-btn')}>
+          <SearchIcon />
+        </Button>
+        <h1 className={cx('question')}>
+          Where to? <span>Anywhere . Any week . Add guests</span>
+        </h1>
+        <span className={cx('filter')}>
+          <Image src={images.filterIcon} alt='filter-icon'></Image>
+        </span>
+      </div>
     </section>
   );
 };

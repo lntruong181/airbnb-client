@@ -25,13 +25,18 @@ const AlbumItem = () => {
       <div className={cx('item')}>
         <div className={cx('carousel')}>
           <Carousel>
-            {_.shuffle(imageCollections).map((image) => (
-              <Image src={image} alt='beauty-spot' className={cx('image')} />
+            {_.shuffle(imageCollections).map((image, index) => (
+              <Image
+                src={image}
+                alt='beauty-spot'
+                className={cx('image')}
+                key={index}
+              />
             ))}
           </Carousel>
         </div>
         <span className={cx('like')}>
-          <Image src={images.heartIcon} />
+          <Image src={images.heartIcon} alt='heart-icon' />
         </span>
       </div>
       <div className={cx('item')}>
