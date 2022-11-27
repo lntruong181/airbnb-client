@@ -12,51 +12,6 @@ const Album = () => {
       <Grid item xs={4} md={2}>
         <AlbumItem />
       </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
-      <Grid item xs={4} md={2}>
-        <AlbumItem />
-      </Grid>
     </Grid>
   );
 };
