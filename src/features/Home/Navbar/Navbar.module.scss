@@ -5,7 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   margin-top: 20px;
+  padding: var(--default-padding);
 
   gap: 20px;
 }
