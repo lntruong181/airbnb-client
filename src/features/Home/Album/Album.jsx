@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Album.module.scss';
 import AlbumItem from './AlbumItem';
-
+import GlobalMap from '@/components/GlobalMap';
 const cx = classNames.bind(styles);
 
 const Album = () => {
@@ -55,6 +55,7 @@ const Album = () => {
       <Grid item xs={4} sm={4} md={3} lg={2}>
         <AlbumItem />
       </Grid>
+      {/* <GlobalMap /> */}
     </Grid>
   );
 };

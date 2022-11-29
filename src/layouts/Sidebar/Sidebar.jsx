@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import images from '@/assets/Images';
@@ -9,13 +11,18 @@ import {
   HamburgerIcon,
   SearchIcon,
 } from '@/enum/icon.enum';
+import Popper from '@/components/Popper';
 
 import styles from './Sidebar.module.scss';
-import MenuTooltip from '@/components/MenuTooltip';
+import 'tippy.js/dist/tippy.css';
 
 const cx = classNames.bind(styles);
 
 const Sidebar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const toggleMenu = () => {
+    setOpenMenu((previous) => !previous);
+  };
   return (
     <section className={cx('container')}>
       <div className={cx('item', 'logo')}>
@@ -40,14 +47,30 @@ const Sidebar = () => {
         <Button className={cx('language')} isRound={true} shadowOnHover={true}>
           <GlobalIcon />
         </Button>
-        <MenuTooltip>
-          <Button className={cx('user')}>
+        <Tippy
+          // content={'User'}
+          visible={openMenu}
+          render={() => (
+            <Popper>
+              <div className={cx('tooltip-box')}>
+                <p className={cx('tooltip-item')}>Sign up</p>
+                <p className={cx('tooltip-item')}>Sign in</p>
+              </div>
+              <div className={cx('tooltip-box')}>
+                <p className={cx('tooltip-item')}>Airbnb your home</p>
+                <p className={cx('tooltip-item')}>Host an experience</p>
+                <p className={cx('tooltip-item')}>Help</p>
+              </div>
+            </Popper>
+          )}
+        >
+          <Button handleOnClick={toggleMenu} className={cx('user')}>
             <HamburgerIcon />
             <span className={cx('user-avatar')}>
               <Image src={images.userIcon} alt={'user-icon'}></Image>
             </span>
           </Button>
-        </MenuTooltip>
+        </Tippy>
       </div>
 
       <div className={cx('where')}>
