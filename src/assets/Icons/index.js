@@ -1,4 +1,4 @@
-import { BsFilterRight } from 'react-icons/bs';
+import { BsFilterRight, BsCurrencyPound } from 'react-icons/bs';
 import { SiAirbnb } from 'react-icons/si';
 import { BiSearch } from 'react-icons/bi';
 import { RiGlobalLine } from 'react-icons/ri';
@@ -16,3 +16,4 @@ export const KeyIcon = () => <HiOutlineKey />;
 export const RightArrowIcon = () => <SlArrowRight />;
 export const LeftArrowIcon = () => <SlArrowLeft />;
 export const StarIcon = () => <AiFillStar />;
+export const CurrencyPoundIcon = () => <BsCurrencyPound />;
