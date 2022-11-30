@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import _ from 'lodash';
 import Image from '@/components/Image';
-import { StarIcon } from '@/enum/icon.enum';
+import { StarIcon } from '@/assets/Icons';
 
 import styles from './AlbumItem.module.scss';
 import 'swiper/css';

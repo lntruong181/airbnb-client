@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import images from '@/assets/Images';
 import Button from '@/components/Button';
-import { RightArrowIcon } from '@/enum/icon.enum';
+import { RightArrowIcon } from '@/assets/Icons';
 
 import styles from './Navbar.module.scss';
 import Image from '@/components/Image';

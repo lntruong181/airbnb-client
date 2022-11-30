@@ -10,7 +10,7 @@ import {
   GlobalIcon,
   HamburgerIcon,
   SearchIcon,
-} from '@/enum/icon.enum';
+} from '@/assets/Icons';
 import Popper from '@/components/Popper';
 
 import styles from './Sidebar.module.scss';

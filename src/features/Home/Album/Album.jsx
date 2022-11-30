@@ -9,7 +9,7 @@ import Button from '@/components/Button';
 const cx = classNames.bind(styles);
 
 const Album = () => {
-  const [showMap, setShowMap] = useState(false);
+  const [showMap, setShowMap] = useState(true);
 
   return (
     <div className={cx('container')}>
