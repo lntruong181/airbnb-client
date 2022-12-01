@@ -1,17 +1,16 @@
-import { useState } from 'react';
 import { Grid } from '@mui/material';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
-import AlbumItem from './AlbumItem';
 import GlobalMap from '@/components/GlobalMap';
+import Card from '../Card';
 
-import styles from './Album.module.scss';
+import styles from './Portfolio.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Album = () => {
-  const isShowMap = useSelector((state) => state.home.showMap);
+const Portfolio = () => {
+  const isShowMap = useSelector((state) => state.booking.showMap);
 
   return (
     <div className={cx('container')}>
@@ -25,58 +24,43 @@ const Album = () => {
             columns={{ xs: 4, sm: 8, md: 12, lg: 12 }}
           >
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
             <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
-              <AlbumItem />
+              <Card />
             </Grid>
           </Grid>
         </div>
@@ -85,4 +69,4 @@ const Album = () => {
   );
 };
 
-export default Album;
+export default Portfolio;

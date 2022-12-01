@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import homeSlices from '@/features/Home/homeSlices';
+import bookingSlices from '@/features/Booking/bookingSlices';
 
 export const store = configureStore({
   reducer: {
-    home: homeSlices
+    booking: bookingSlices,
   },
 });

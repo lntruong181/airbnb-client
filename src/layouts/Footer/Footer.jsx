@@ -8,7 +8,7 @@ import {
   ListIcon,
   MapIcon,
 } from '@/assets/Icons';
-import { toggleMap } from '@/features/Home/homeSlices';
+import { toggleMap } from '@/features/Booking/bookingSlices';
 
 import styles from './Footer.module.scss';
 
@@ -16,7 +16,7 @@ const cx = classNames.bind(styles);
 
 const Footer = () => {
   const dispatch = useDispatch();
-  const isShowMap = useSelector((state) => state.home.showMap);
+  const isShowMap = useSelector((state) => state.booking.showMap);
 
   return (
     <footer className={cx('container', 'flex')}>

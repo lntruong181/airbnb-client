@@ -24,7 +24,7 @@ const Sidebar = () => {
     setOpenMenu((previous) => !previous);
   };
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} id={'sidebar'}>
       <div className={cx('item', 'logo')}>
         <span className={cx('logo-icon')}>
           <AirbnbIcon />
@@ -47,30 +47,35 @@ const Sidebar = () => {
         <Button className={cx('language')} isRound={true} shadowOnHover={true}>
           <GlobalIcon />
         </Button>
-        <Tippy
-          // content={'User'}
-          visible={openMenu}
-          render={() => (
-            <Popper>
-              <div className={cx('tooltip-box')}>
-                <p className={cx('tooltip-item')}>Sign up</p>
-                <p className={cx('tooltip-item')}>Sign in</p>
-              </div>
-              <div className={cx('tooltip-box')}>
-                <p className={cx('tooltip-item')}>Airbnb your home</p>
-                <p className={cx('tooltip-item')}>Host an experience</p>
-                <p className={cx('tooltip-item')}>Help</p>
-              </div>
-            </Popper>
-          )}
-        >
-          <Button handleOnClick={toggleMenu} className={cx('user')}>
-            <HamburgerIcon />
-            <span className={cx('user-avatar')}>
-              <Image src={images.userIcon} alt={'user-icon'}></Image>
-            </span>
-          </Button>
-        </Tippy>
+        <div>
+          {' '}
+          <Tippy
+            content={'User'}
+            interactive={true}
+            visible={openMenu}
+            appendTo={() => document.querySelector('#sidebar')}
+            render={() => (
+              <Popper>
+                <div className={cx('tooltip-box')}>
+                  <p className={cx('tooltip-item')}>Sign up</p>
+                  <p className={cx('tooltip-item')}>Sign in</p>
+                </div>
+                <div className={cx('tooltip-box')}>
+                  <p className={cx('tooltip-item')}>Airbnb your home</p>
+                  <p className={cx('tooltip-item')}>Host an experience</p>
+                  <p className={cx('tooltip-item')}>Help</p>
+                </div>
+              </Popper>
+            )}
+          >
+            <Button handleOnClick={toggleMenu} className={cx('user')}>
+              <HamburgerIcon />
+              <span className={cx('user-avatar')}>
+                <Image src={images.userIcon} alt={'user-icon'}></Image>
+              </span>
+            </Button>
+          </Tippy>
+        </div>
       </div>
 
       <div className={cx('where')}>

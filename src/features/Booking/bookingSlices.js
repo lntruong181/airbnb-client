@@ -4,8 +4,8 @@ const initialState = {
   showMap: false,
 };
 
-export const homeSlice = createSlice({
-  name: 'home',
+export const bookingSlice = createSlice({
+  name: 'booking',
   initialState,
   reducers: {
     toggleMap: (state) => {
@@ -15,6 +15,6 @@ export const homeSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { toggleMap } = homeSlice.actions;
+export const { toggleMap } = bookingSlice.actions;
 
-export default homeSlice.reducer;
+export default bookingSlice.reducer;

@@ -1,17 +1,19 @@
 import classNames from 'classnames/bind';
 import _ from 'lodash';
+
 import Image from '@/components/Image';
 import { StarIcon } from '@/assets/Icons';
+import images from '@/assets/Images';
+import Carousel from '@/components/Carousel';
 
-import styles from './AlbumItem.module.scss';
+import styles from './Card.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import images from '@/assets/Images';
-import Carousel from '@/components/Carousel';
+
 const cx = classNames.bind(styles);
 
-const AlbumItem = () => {
+const Card = () => {
   const imageCollections = [
     'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmlldG5hbSUyMHBvcHVsYXIlMjBsb2NhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     'https://images.unsplash.com/photo-1504457047772-27faf1c00561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMHBvcHVsYXIlMjBsb2NhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
@@ -58,4 +60,4 @@ const AlbumItem = () => {
     </div>
   );
 };
-export default AlbumItem;
+export default Card;
