@@ -1,6 +1,7 @@
 .container {
   position: relative;
   margin-top: 20px;
+  min-height: 100vh;
 }
 .album {
   padding: var(--default-padding);

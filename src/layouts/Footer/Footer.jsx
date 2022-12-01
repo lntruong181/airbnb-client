@@ -1,53 +1,70 @@
 import classNames from 'classnames/bind';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '@/components/Button';
-import { CurrencyPoundIcon, GlobalIcon } from '@/assets/Icons';
+import {
+  CurrencyPoundIcon,
+  GlobalIcon,
+  ListIcon,
+  MapIcon,
+} from '@/assets/Icons';
+import { toggleMap } from '@/features/Home/homeSlices';
 
 import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles);
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const isShowMap = useSelector((state) => state.home.showMap);
+
   return (
     <footer className={cx('container', 'flex')}>
-      <Button className={cx('show-map-btn')} isRound={true} scaleOnHover={true}>
-        Show map
+      <Button
+        className={cx('show-map-btn')}
+        isRound={true}
+        scaleOnHover={true}
+        handleOnClick={() => dispatch(toggleMap())}
+      >
+        {isShowMap ? 'Show map' : 'Show map'}
+        {isShowMap ? <ListIcon /> : <MapIcon />}
       </Button>
-      <div className={cx('term', 'flex')}>
-        <ul className={cx('term-list', 'flex')}>
-          <li className={cx('term-item')}>© 2022 Airbnb, Inc</li>
-          <span className={cx('dot')}>.</span>
-          <li className={cx('term-item')}>Privacy</li>
-          <span className={cx('dot')}>.</span>
-          <li className={cx('term-item')}>Terms</li>
-          <span className={cx('dot')}>.</span>
-          <li className={cx('term-item')}>Sitemap</li>
-          <span className={cx('dot')}>.</span>
-          <li className={cx('term-item')}>UK Modern Slavery Act</li>
-          <span className={cx('dot')}>.</span>
-          <li className={cx('term-item')}>Company Details</li>
-          <span className={cx('dot')}>.</span>
-          <li className={cx('term-item')}>Destionations</li>
-        </ul>
-        <ul className={cx('term-list', 'flex')}>
-          <li className={cx('term-item', 'flex', 'bold')}>
-            <span>
-              <GlobalIcon />
-            </span>
-            Sitemap
-          </li>
-          <li className={cx('term-item', 'flex', 'bold')}>
-            {' '}
-            <span>
-              <CurrencyPoundIcon />
-            </span>
-            GBM
-          </li>
-          <li className={cx('term-item', 'flex', 'bold')}>
-            Support & Resource
-          </li>
-        </ul>
-      </div>
+      {isShowMap || (
+        <div className={cx('term', 'flex')}>
+          <ul className={cx('term-list', 'flex')}>
+            <li className={cx('term-item')}>© 2022 Airbnb, Inc</li>
+            <span className={cx('dot')}>.</span>
+            <li className={cx('term-item')}>Privacy</li>
+            <span className={cx('dot')}>.</span>
+            <li className={cx('term-item')}>Terms</li>
+            <span className={cx('dot')}>.</span>
+            <li className={cx('term-item')}>Sitemap</li>
+            <span className={cx('dot')}>.</span>
+            <li className={cx('term-item')}>UK Modern Slavery Act</li>
+            <span className={cx('dot')}>.</span>
+            <li className={cx('term-item')}>Company Details</li>
+            <span className={cx('dot')}>.</span>
+            <li className={cx('term-item')}>Destionations</li>
+          </ul>
+          <ul className={cx('term-list', 'flex')}>
+            <li className={cx('term-item', 'flex', 'bold')}>
+              <span>
+                <GlobalIcon />
+              </span>
+              Sitemap
+            </li>
+            <li className={cx('term-item', 'flex', 'bold')}>
+              <span>
+                <CurrencyPoundIcon />
+              </span>
+              GBM
+            </li>
+            <li className={cx('term-item', 'flex', 'bold')}>
+              Support & Resource
+            </li>
+          </ul>
+        </div>
+      )}
     </footer>
   );
 };

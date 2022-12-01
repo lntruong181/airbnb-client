@@ -1,19 +1,21 @@
+import { useState } from 'react';
 import { Grid } from '@mui/material';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
 
-import styles from './Album.module.scss';
 import AlbumItem from './AlbumItem';
 import GlobalMap from '@/components/GlobalMap';
-import { useState } from 'react';
-import Button from '@/components/Button';
+
+import styles from './Album.module.scss';
+
 const cx = classNames.bind(styles);
 
 const Album = () => {
-  const [showMap, setShowMap] = useState(true);
+  const isShowMap = useSelector((state) => state.home.showMap);
 
   return (
     <div className={cx('container')}>
-      {showMap ? (
+      {isShowMap ? (
         <GlobalMap />
       ) : (
         <div className={cx('album')}>
