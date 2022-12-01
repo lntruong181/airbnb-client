@@ -1,13 +1,20 @@
+import { Provider } from 'react-redux';
+
 import MainLayout from '@/layouts';
-import GlobalStyles from '@/assets/GlobalStyles';
 import Home from '@/features/Home';
+import { store } from '@/app/store';
+
+import GlobalStyles from '@/assets/GlobalStyles';
+
 function App() {
   return (
-    <GlobalStyles>
-      <MainLayout>
-        <Home />
-      </MainLayout>
-    </GlobalStyles>
+    <Provider store={store}>
+      <GlobalStyles>
+        <MainLayout>
+          <Home />
+        </MainLayout>
+      </GlobalStyles>
+    </Provider>
   );
 }
 
