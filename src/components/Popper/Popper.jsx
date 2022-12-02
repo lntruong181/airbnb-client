@@ -21,7 +21,6 @@ const Popper = ({
         delay={delay}
         interactive={true}
         visible={visible}
-        hideOnClick={true}
         render={render}
         {...restProps}
       >

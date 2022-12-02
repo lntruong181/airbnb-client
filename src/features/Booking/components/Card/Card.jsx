@@ -24,7 +24,7 @@ const Card = () => {
 
   return (
     <div className={cx('container')}>
-      <div className={cx('item')}>
+      <div className={cx('card')}>
         <div className={cx('carousel')}>
           <Carousel>
             {_.shuffle(imageCollections).map((image, index) => (

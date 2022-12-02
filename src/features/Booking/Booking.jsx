@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import Portfolio from './components/Portfolio';
+import Portfolio from './components/Rooms';
 
 const Booking = () => {
   return (

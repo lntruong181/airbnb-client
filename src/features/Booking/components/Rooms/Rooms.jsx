@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 import GlobalMap from '@/components/GlobalMap';
 import Card from '../Card';
 
-import styles from './Portfolio.module.scss';
+import styles from './Rooms.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Portfolio = () => {
+const Rooms = () => {
   const isShowMap = useSelector((state) => state.booking.showMap);
 
   return (
@@ -17,7 +17,7 @@ const Portfolio = () => {
       {isShowMap ? (
         <GlobalMap />
       ) : (
-        <div className={cx('album')}>
+        <div className={cx('rooms')}>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
@@ -69,4 +69,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Rooms;
