@@ -1,10 +1,10 @@
-import Navbar from './components/Navbar';
+import Category from './components/Category';
 import Rooms from './components/Rooms';
 
 const Booking = () => {
   return (
     <main>
-      <Navbar />
+      <Category />
       <Rooms />
     </main>
   );

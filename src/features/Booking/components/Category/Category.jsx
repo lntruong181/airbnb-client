@@ -6,7 +6,7 @@ import images from '@/assets/Images';
 import Button from '@/components/Button';
 import { RightArrowIcon } from '@/assets/Icons';
 
-import styles from './Navbar.module.scss';
+import styles from './Category.module.scss';
 import Image from '@/components/Image';
 
 const cx = classNames.bind(styles);
@@ -209,7 +209,7 @@ const items = [
   },
 ];
 
-const Navbar = () => {
+const Category = () => {
   const [selected, setSelected] = useState(items[0].id);
 
   return (
@@ -238,4 +238,4 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
+export default Category;
