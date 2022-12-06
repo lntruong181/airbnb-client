@@ -18,7 +18,7 @@ const Rooms = () => {
       ) : (
         <div className={cx('rooms')}>
           <div className='container-fluid'>
-            <div className='row'>
+            <div className={cx('booking', 'row')}>
               <Card />
               <Card />
               <Card />

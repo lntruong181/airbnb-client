@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';

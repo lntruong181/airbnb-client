@@ -71,7 +71,9 @@ const Sidebar = () => {
           >
             <span tabIndex='0'>
               <Button handleOnClick={toggleMenu} className={cx('user')}>
-                <HamburgerIcon />
+                <span className={cx('user-icon')}>
+                  <HamburgerIcon />
+                </span>
                 <span className={cx('user-avatar')}>
                   <Image src={images.userIcon} alt={'user-icon'}></Image>
                 </span>

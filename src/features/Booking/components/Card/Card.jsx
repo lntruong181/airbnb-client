@@ -10,6 +10,7 @@ import styles from './Card.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +24,12 @@ const Card = () => {
   ];
 
   return (
-    <div className={cx('container', 'col')}>
+    <Link
+      to={'rooms'}
+      target='_blank'
+      query={{ name: 'truong' }}
+      className={cx('container', 'col')}
+    >
       <div className={cx('item')}>
         <div className={cx('carousel')}>
           <Carousel>
@@ -54,10 +60,10 @@ const Card = () => {
         <p className={cx('sub-heading')}>Added 11 weeks ago</p>
         <p className={cx('sub-heading')}>26 Feb - 3 Mar - Individual Host</p>
         <p className={cx('price')}>
-          <strong>$1,809 </strong>night
+          <strong>$1,809 </strong>total
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 export default Card;
