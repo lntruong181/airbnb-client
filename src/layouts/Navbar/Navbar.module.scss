@@ -2,6 +2,7 @@
   position: relative;
   height: 80px;
   min-width: 70px;
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -24,18 +25,9 @@
 // DETAIL LAYOUT
 
 .sm {
-  width: 65%;
+  padding: var(--detail-default-padding);
   .box {
     width: 300px;
-  }
-}
-
-// MAIN LAYOUT
-
-.lg {
-  width: 100%;
-  .box {
-    width: 352px;
   }
 }
 
@@ -71,6 +63,8 @@
 
 .box {
   height: 48px;
+  width: 352px;
+
   padding: 10px 10px 10px 0;
   border: 1px solid var(--grey-color);
   border-radius: 30px;

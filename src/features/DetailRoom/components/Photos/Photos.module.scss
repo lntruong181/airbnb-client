@@ -1,0 +1,50 @@
+.container {
+  width: 100%;
+  margin: auto;
+
+  padding: var(--detail-default-padding);
+  margin-top: 2rem;
+}
+.heading {
+  font-weight: 600;
+  font-size: 2.6rem;
+}
+.rate {
+  font-size: 1.4rem;
+  color: var(--text-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rate-left {
+  font-weight: 600;
+
+  gap: 0.5rem;
+  flex: 1;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.rate-number {
+  font-weight: 400;
+}
+.superhost {
+  font-weight: 400;
+  gap: 5px;
+}
+
+.rate-right {
+  gap: 1rem;
+}
+.interact {
+  gap: 0.7rem;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
