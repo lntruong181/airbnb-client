@@ -23,7 +23,7 @@ const Card = () => {
   ];
 
   return (
-    <div className={cx('container')}>
+    <div className={cx('container', 'col')}>
       <div className={cx('item')}>
         <div className={cx('carousel')}>
           <Carousel>

@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
@@ -18,51 +17,29 @@ const Rooms = () => {
         <GlobalMap />
       ) : (
         <div className={cx('rooms')}>
-          <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 4, sm: 8, md: 12, lg: 12 }}
-          >
-            <Grid item xs={4} sm={4} md={3} lg={2}>
+          <div className='container-fluid'>
+            <div className='row'>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-            <Grid item xs={4} sm={4} md={3} lg={2}>
               <Card />
-            </Grid>
-          </Grid>
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
+          </div>
         </div>
       )}
     </div>
