@@ -11,21 +11,24 @@ import {
   SearchIcon,
 } from '@/assets/Icons';
 import Popper from '@/components/Popper';
-
-import styles from './Sidebar.module.scss';
-import 'tippy.js/dist/tippy.css';
 import Wrapper from '@/components/Popper/Wrapper';
+
+import styles from './Navbar.module.scss';
+import 'tippy.js/dist/tippy.css';
 
 const cx = classNames.bind(styles);
 
-const Sidebar = () => {
+const Navbar = ({ isDetailLayout = false }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => {
     setOpenMenu((previous) => !previous);
   };
 
   return (
-    <section className={cx('container')} id={'sidebar'}>
+    <section
+      className={cx('container', isDetailLayout ? 'sm' : 'lg')}
+      id={'sidebar'}
+    >
       <div className={cx('item', 'logo')}>
         <span className={cx('logo-icon')}>
           <AirbnbIcon />
@@ -34,13 +37,20 @@ const Sidebar = () => {
       </div>
 
       <div className={cx('item', 'box')}>
-        <Button className={cx('box-btn')}>Anywhere</Button>
-        <Button className={cx('box-btn')}>Any week</Button>
-        <Button className={cx('box-btn')}>Add guests</Button>
+        {isDetailLayout ? (
+          <span className={cx('box-heading')}>Start your search</span>
+        ) : (
+          <>
+            <Button className={cx('box-btn')}>Anywhere</Button>
+            <Button className={cx('box-btn')}>Any week</Button>
+            <Button className={cx('box-btn')}>Add guests</Button>
+          </>
+        )}
         <Button className={cx('box-search')} color={'red'} isRound={true}>
           <SearchIcon />
         </Button>
       </div>
+
       <div className={cx('item')}>
         <Button className={cx('home')} shadowOnHover={true}>
           Airbnb your home
@@ -97,4 +107,4 @@ const Sidebar = () => {
     </section>
   );
 };
-export default Sidebar;
+export default Navbar;
