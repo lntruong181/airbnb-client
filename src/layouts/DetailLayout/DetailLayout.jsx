@@ -12,7 +12,6 @@ const DetailLayout = ({ children }) => {
     <div className={cx('container')}>
       <Navbar isDetailLayout={true} />
       {children}
-      <Footer />
     </div>
   );
 };

@@ -1,0 +1,29 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeLensFontFamily": "Arial",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.suggest.preview": true,
+  "editor.wordWrap": "on",
+
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 16,
+
+  "typescript.inlayHints.parameterNames.enabled": "all",
+
+  "workbench.colorTheme": "Community Material Theme High Contrast",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none"
+}

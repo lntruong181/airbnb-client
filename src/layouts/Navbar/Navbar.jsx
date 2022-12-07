@@ -1,5 +1,6 @@
-import { forwardRef, useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import images from '@/assets/Images';
 import Button from '@/components/Button';
@@ -12,6 +13,7 @@ import {
 } from '@/assets/Icons';
 import Popper from '@/components/Popper';
 import Wrapper from '@/components/Popper/Wrapper';
+import { ROUTE } from '@/enum/routes.enums';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -29,12 +31,12 @@ const Navbar = ({ isDetailLayout = false }) => {
       className={cx('container', isDetailLayout ? 'sm' : 'lg')}
       id={'sidebar'}
     >
-      <div className={cx('item', 'logo')}>
+      <Link to={ROUTE.HOME} className={cx('item', 'logo')}>
         <span className={cx('logo-icon')}>
           <AirbnbIcon />
         </span>{' '}
         <h1 className={cx('heading-text')}>airbnb</h1>
-      </div>
+      </Link>
 
       <div className={cx('item', 'box')}>
         {isDetailLayout ? (
@@ -61,7 +63,8 @@ const Navbar = ({ isDetailLayout = false }) => {
         <div>
           <Popper
             visible={openMenu}
-            placement='bottom-start'
+            handleClickOutside={setOpenMenu}
+            placement='bottom-end'
             className={cx('tooltip')}
             render={() => {
               return (
