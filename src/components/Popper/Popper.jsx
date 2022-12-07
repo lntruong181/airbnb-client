@@ -11,6 +11,7 @@ const Popper = ({
   children,
   className,
   visible,
+  handleClickOutside,
   delay = [0, 200],
   render,
   ...restProps
@@ -21,6 +22,9 @@ const Popper = ({
         delay={delay}
         interactive={true}
         visible={visible}
+        onClickOutside={() => {
+          handleClickOutside(false);
+        }}
         render={render}
         {...restProps}
       >
