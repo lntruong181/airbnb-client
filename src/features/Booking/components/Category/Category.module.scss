@@ -72,6 +72,11 @@
     color: #000000;
   }
 }
+.next {
+  padding: 8px;
+
+  border: 1px solid rgba(0, 0, 0, 0.438);
+}
 
 .radio-icon {
   width: 24px;
@@ -98,10 +103,6 @@
   transition: all 200ms ease;
 }
 
-.next {
-  border: 1px solid rgba(0, 0, 0, 0.438) !important;
-  padding: 8px;
-}
 .filter {
   width: 90px;
   height: 48px;

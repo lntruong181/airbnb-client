@@ -96,6 +96,7 @@
   }
 
   &-search {
+    background-color: var(--heading-color);
     color: white;
     padding: 8px;
   }
@@ -127,6 +128,8 @@
   font-size: 2rem;
   padding: 10px;
   margin: 0 5px;
+
+  border-radius: 50%;
 }
 .user {
   position: relative;

@@ -3,11 +3,11 @@ import { v4 as uuid } from 'uuid';
 import classNames from 'classnames/bind';
 
 import images from '@/assets/Images';
-import Button from '@/components/Button';
 import { RightArrowIcon } from '@/assets/Icons';
+import Image from '@/components/Image';
+import Icon from '@/components/Icon';
 
 import styles from './Category.module.scss';
-import Image from '@/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -225,9 +225,9 @@ const Category = () => {
         ))}
       </ul>
       <div>
-        <Button className={cx('next')} isRound={true} scaleOnHover={true}>
+        <Icon className={cx('next')} isRound={true} scaleOnHover={true}>
           <RightArrowIcon />
-        </Button>
+        </Icon>
       </div>
       <button className={cx('filter')}>
         <span className={cx('filter-icon')}>

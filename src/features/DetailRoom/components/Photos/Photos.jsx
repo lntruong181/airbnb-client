@@ -1,5 +1,10 @@
-import { HeartIcon, MedalIcon, ShareIcon, StarIcon } from '@/assets/Icons';
-import images from '@/assets/Images';
+import {
+  GridIcon,
+  HeartIcon,
+  MedalIcon,
+  ShareIcon,
+  StarIcon,
+} from '@/assets/Icons';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
@@ -71,6 +76,11 @@ const Photos = () => {
           <span>
             <Image className={cx('hover')} src={imageCollections[3]} />
           </span>
+        </div>
+        <div className={cx('show-all')}>
+          <Button>
+            <GridIcon /> Show all photos
+          </Button>
         </div>
       </div>
     </div>

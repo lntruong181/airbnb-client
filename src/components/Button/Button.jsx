@@ -6,18 +6,14 @@ const cx = classNames.bind(styles);
 const Button = ({
   handleOnClick,
   className,
-  color,
-  isRound = false,
   shadowOnHover = false,
-  scaleOnHover = false,
   children,
 }) => {
-  const round = isRound ? 'round' : '';
   const shadow = shadowOnHover ? 'shadow' : '';
-  const scale = scaleOnHover ? 'scale' : '';
+
   return (
     <button
-      className={cx('container', className, color, round, shadow, scale)}
+      className={cx('container', className, shadow)}
       onClick={handleOnClick}
     >
       {children}

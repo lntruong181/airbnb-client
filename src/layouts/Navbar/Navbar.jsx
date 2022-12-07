@@ -13,6 +13,7 @@ import {
 } from '@/assets/Icons';
 import Popper from '@/components/Popper';
 import Wrapper from '@/components/Popper/Wrapper';
+import Icon from '@/components/Icon';
 import { ROUTE } from '@/enum/routes.enums';
 
 import styles from './Navbar.module.scss';
@@ -48,16 +49,16 @@ const Navbar = ({ isDetailLayout = false }) => {
             <Button className={cx('box-btn')}>Add guests</Button>
           </>
         )}
-        <Button className={cx('box-search')} color={'red'} isRound={true}>
+        <Icon className={cx('box-search')} isRound={true}>
           <SearchIcon />
-        </Button>
+        </Icon>
       </div>
 
       <div className={cx('item')}>
         <Button className={cx('home')} shadowOnHover={true}>
           Airbnb your home
         </Button>
-        <Button className={cx('language')} isRound={true} shadowOnHover={true}>
+        <Button className={cx('language')} shadowOnHover={true}>
           <GlobalIcon />
         </Button>
         <div>
@@ -88,7 +89,7 @@ const Navbar = ({ isDetailLayout = false }) => {
                   <HamburgerIcon />
                 </span>
                 <span className={cx('user-avatar')}>
-                  <Image src={images.userIcon} alt={'user-icon'}></Image>
+                  <Image src={images.userIcon} alt={'user-icon'} />
                 </span>
               </Button>
             </span>
@@ -97,14 +98,14 @@ const Navbar = ({ isDetailLayout = false }) => {
       </div>
 
       <div className={cx('where')}>
-        <Button className={cx('search-btn')}>
+        <Icon className={cx('search-btn')}>
           <SearchIcon />
-        </Button>
+        </Icon>
         <h1 className={cx('question')}>
           Where to? <span>Anywhere . Any week . Add guests</span>
         </h1>
         <span className={cx('filter')}>
-          <Image src={images.filterIcon} alt='filter-icon'></Image>
+          <Image src={images.filterIcon} alt='filter-icon' />
         </span>
       </div>
     </section>
