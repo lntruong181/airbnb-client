@@ -23,10 +23,7 @@
   gap: 0.5rem;
   flex: 1;
 }
-.flex {
-  display: flex;
-  align-items: center;
-}
+
 .rate-number {
   font-weight: 400;
 }
@@ -47,4 +44,58 @@
   &:active {
     transform: scale(0.95);
   }
+}
+
+// ALBUM SECTION
+
+.albums {
+  width: 100%;
+  max-height: 517px;
+  justify-content: center;
+
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.item {
+  height: 517px;
+
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+
+  overflow: hidden;
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    flex: 0.5;
+    gap: 8px;
+    span {
+      min-height: 250px;
+      min-width: 100%;
+      flex: 1;
+
+      overflow: hidden;
+    }
+  }
+}
+
+.hover {
+  transition: all 500ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.pointer {
+  cursor: pointer;
 }
