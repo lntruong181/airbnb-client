@@ -1,10 +1,5 @@
-import {
-  GridIcon,
-  HeartIcon,
-  MedalIcon,
-  ShareIcon,
-  StarIcon,
-} from '@/assets/Icons';
+import { HeartIcon, MedalIcon, ShareIcon, StarIcon } from '@/assets/Icons';
+import images from '@/assets/Images';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
@@ -59,22 +54,42 @@ const Photos = () => {
       </div>
       <div className={cx('albums', 'flex')}>
         <div className={cx('item')}>
-          <Image className={cx('hover')} src={imageCollections[3]} />
+          <Image
+            className={cx('hover')}
+            src={imageCollections[3]}
+            alt='album-image-1'
+          />
         </div>
         <div className={cx('item', 'flex')}>
           <span>
-            <Image className={cx('hover')} src={imageCollections[1]} />
+            <Image
+              className={cx('hover')}
+              src={imageCollections[1]}
+              alt='album-image-2'
+            />
           </span>
           <span>
-            <Image className={cx('hover')} src={imageCollections[2]} />
+            <Image
+              className={cx('hover')}
+              src={imageCollections[2]}
+              alt='album-image-3'
+            />
           </span>
         </div>
         <div className={cx('item', 'flex')}>
           <span>
-            <Image className={cx('hover')} src={imageCollections[4]} />
+            <Image
+              className={cx('hover')}
+              src={imageCollections[4]}
+              alt='album-image-4'
+            />
           </span>
           <span>
-            <Image className={cx('hover')} src={imageCollections[3]} />
+            <Image
+              className={cx('hover')}
+              src={imageCollections[3]}
+              alt='album-image-5'
+            />
           </span>
         </div>
         <div className={cx('show-all')}>
@@ -83,7 +98,12 @@ const Photos = () => {
             isRound={true}
             scaleOnClick={true}
           >
-            <GridIcon /> Show all photos
+            <Image
+              className={cx('grid')}
+              src={images.gridIcon}
+              alt='grid-icon'
+            />{' '}
+            Show all photos
           </Button>
         </div>
       </div>

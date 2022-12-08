@@ -1,0 +1,111 @@
+.container {
+  width: 100%;
+  margin: auto;
+
+  padding: var(--detail-default-padding);
+  margin-top: 2rem;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--grey-color);
+}
+.title-container {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  span {
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(6) {
+      height: 30px;
+    }
+  }
+}
+.owner-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+// HIGHLIGHTS AMENITIES
+
+.highlight-amenities {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.amenity {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+
+  & + & {
+    margin-top: 2rem;
+  }
+}
+
+.amenity-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  gap: 0.7rem;
+  span {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+// HOMESTAY HISTORY
+.homestay-history {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+.logo {
+  width: 123px;
+  height: 26px;
+}
+.guide {
+  font-size: 1.6rem;
+}
+.learn-more {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-color);
+
+  cursor: pointer;
+  &:hover {
+    color: inherit;
+  }
+  &:active {
+    opacity: 0.9;
+  }
+}
