@@ -129,8 +129,7 @@ const Amenities = () => {
                   </span>
                 </span>
               </div>
-
-              <a className={cx('more')}>
+              <a href='#' className={cx('more')}>
                 Show More{' '}
                 <span>
                   <RightArrowIcon />

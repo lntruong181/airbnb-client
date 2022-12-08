@@ -15,12 +15,18 @@
   --icon-grey: #717171;
 
   --default-padding: 0 8rem;
-  --detail-default-padding: 0 41rem;
+  --detail-default-padding: 0 8rem;
 }
 
 @media screen and (max-width: 850px) {
   :root {
     --default-padding: 0 2.4rem;
+    --detail-default-padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  :root {
+    --detail-default-padding: 0 2.4rem;
   }
 }
 
