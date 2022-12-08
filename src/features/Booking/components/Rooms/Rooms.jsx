@@ -38,6 +38,10 @@ const Rooms = () => {
               <Card />
               <Card />
               <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
             </div>
           </div>
         </div>

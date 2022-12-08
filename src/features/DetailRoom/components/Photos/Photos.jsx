@@ -78,7 +78,11 @@ const Photos = () => {
           </span>
         </div>
         <div className={cx('show-all')}>
-          <Button>
+          <Button
+            className={cx('show-btn', 'flex')}
+            isRound={true}
+            scaleOnClick={true}
+          >
             <GridIcon /> Show all photos
           </Button>
         </div>

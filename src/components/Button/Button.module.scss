@@ -1,7 +1,7 @@
 .container {
   position: relative;
   background-color: transparent;
-  border: none;
+  border: inherit;
   cursor: pointer;
 
   transition: all 0.2s ease;
@@ -10,7 +10,10 @@
 .shadow:hover {
   background-color: var(--light-grey);
 }
-.scale:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  transform: scale(1.04);
+
+.round {
+  border-radius: 8px;
+}
+.scale:active {
+  transform: scale(0.97);
 }
