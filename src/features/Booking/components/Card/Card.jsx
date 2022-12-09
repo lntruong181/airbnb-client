@@ -1,16 +1,15 @@
 import classNames from 'classnames/bind';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 
 import Image from '@/components/Image';
-import { StarIcon } from '@/assets/Icons';
-import images from '@/assets/Images';
 import Carousel from '@/components/Carousel';
+import { HeartIcon, StarIcon } from '@/assets/svgs';
 
 import styles from './Card.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -44,7 +43,7 @@ const Card = () => {
           </Carousel>
         </div>
         <span className={cx('like')}>
-          <Image src={images.heartIcon} alt='heart-icon' />
+          <HeartIcon />
         </span>
       </div>
       <div className={cx('item')}>

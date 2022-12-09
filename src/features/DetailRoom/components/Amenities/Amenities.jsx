@@ -1,5 +1,11 @@
-import { RightArrowIcon } from '@/assets/Icons';
-import images from '@/assets/Images';
+import {
+  BedroomIcon,
+  CalendarIcon,
+  DoorOpenIcon,
+  KnifeIcon,
+  RightArrowIcon,
+  WorkspaceIcon,
+} from '@/assets/svgs';
 import Icon from '@/components/Icon';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
@@ -39,19 +45,16 @@ const Amenities = () => {
             <div className={cx('section', 'highlight-amenities')}>
               <div className={cx('amenity')}>
                 <span className={cx('amenity-icon')}>
-                  <Image src={images.wifiIcon} alt='wifi-icon' />
+                  <WorkspaceIcon />
                 </span>
                 <h4 className={cx('amenity-description')}>
-                  Fast wifi
-                  <span>
-                    At 342 Mbps, you can take video calls and stream videos for
-                    your whole group.
-                  </span>
+                  Dedicated workspace
+                  <span>Dedicated workspace</span>
                 </h4>
               </div>
               <div className={cx('amenity')}>
                 <span className={cx('amenity-icon')}>
-                  <Image src={images.doorOpenIcon} alt='door-open' />
+                  <DoorOpenIcon />
                 </span>
                 <h4 className={cx('amenity-description')}>
                   Self check-in
@@ -60,7 +63,7 @@ const Amenities = () => {
               </div>
               <div className={cx('amenity')}>
                 <span className={cx('amenity-icon')}>
-                  <Image src={images.calendarIcon} alt='calendar' />
+                  <CalendarIcon />
                 </span>
                 <h4 className={cx('amenity-description')}>
                   Free cancellation before 12 Feb.
@@ -145,30 +148,48 @@ const Amenities = () => {
                     <RightArrowIcon />
                   </Icon>
                   <li className={cx('bedroom-card')}>
-                    <Image
-                      className={cx('bedroom-icon')}
-                      src={images.bedroomIcon}
-                    />
+                    <BedroomIcon />
                     <h3 className={cx('bedroom-heading')}>Bedroom 1</h3>
                     <p className={cx('bedroom-desc')}>1 king bed</p>
                   </li>
                   <li className={cx('bedroom-card')}>
-                    <Image
-                      className={cx('bedroom-icon')}
-                      src={images.bedroomIcon}
-                    />
-                    <h3 className={cx('bedroom-heading')}>Bedroom 2</h3>
+                    <BedroomIcon />
+                    <h3 className={cx('bedroom-heading')}>Bedroom 1</h3>
                     <p className={cx('bedroom-desc')}>1 king bed</p>
                   </li>
                   <li className={cx('bedroom-card')}>
-                    <Image
-                      className={cx('bedroom-icon')}
-                      src={images.bedroomIcon}
-                    />
-                    <h3 className={cx('bedroom-heading')}>Bedroom 3</h3>
+                    <BedroomIcon />
+                    <h3 className={cx('bedroom-heading')}>Bedroom 1</h3>
                     <p className={cx('bedroom-desc')}>1 king bed</p>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div className={cx('section', 'homestay-offers')}>
+              <h1>What this place offers</h1>
+              <div className='container-fluid'>
+                <div className='row'>
+                  <div className='col'>
+                    <KnifeIcon />
+                  </div>
+                  <div className='col'>2 of 2</div>
+                </div>
+                <div className='row'>
+                  <div className='col'>1 of 2</div>
+                  <div className='col'>2 of 2</div>
+                </div>
+                <div className='row'>
+                  <div className='col'>1 of 2</div>
+                  <div className='col'>2 of 2</div>
+                </div>
+                <div className='row'>
+                  <div className='col'>1 of 2</div>
+                  <div className='col'>2 of 2</div>
+                </div>
+                <div className='row'>
+                  <div className='col'>1 of 2</div>
+                  <div className='col'>2 of 2</div>
+                </div>
               </div>
             </div>
           </div>

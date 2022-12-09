@@ -3,11 +3,11 @@ import { v4 as uuid } from 'uuid';
 import classNames from 'classnames/bind';
 
 import images from '@/assets/Images';
-import { RightArrowIcon } from '@/assets/Icons';
 import Image from '@/components/Image';
 import Icon from '@/components/Icon';
 
 import styles from './Category.module.scss';
+import { FilterIcon, RightArrowIcon } from '@/assets/svgs';
 
 const cx = classNames.bind(styles);
 
@@ -231,7 +231,7 @@ const Category = () => {
       </div>
       <button className={cx('filter')}>
         <span className={cx('filter-icon')}>
-          <Image src={images.filterIcon} alt='filter-icon'></Image>
+          <FilterIcon />
         </span>
         <span className={cx('filter-text')}>Filters</span>
       </button>

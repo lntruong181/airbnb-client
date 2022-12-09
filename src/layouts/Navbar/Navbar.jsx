@@ -5,16 +5,17 @@ import { Link } from 'react-router-dom';
 import images from '@/assets/Images';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
-import {
-  AirbnbIcon,
-  GlobalIcon,
-  HamburgerIcon,
-  SearchIcon,
-} from '@/assets/Icons';
 import Popper from '@/components/Popper';
 import Wrapper from '@/components/Popper/Wrapper';
 import Icon from '@/components/Icon';
 import { ROUTE } from '@/enum/routes.enums';
+import {
+  AirbnbIcon,
+  FilterIcon,
+  GlobalIcon,
+  HamburgerIcon,
+  SearchIcon,
+} from '@/assets/svgs';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -105,7 +106,7 @@ const Navbar = ({ isDetailLayout = false }) => {
           Where to? <span>Anywhere . Any week . Add guests</span>
         </h1>
         <span className={cx('filter')}>
-          <Image src={images.filterIcon} alt='filter-icon' />
+          <FilterIcon />
         </span>
       </div>
     </section>

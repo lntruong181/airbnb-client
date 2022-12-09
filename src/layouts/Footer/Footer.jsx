@@ -2,15 +2,10 @@ import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '@/components/Button';
-import {
-  CurrencyPoundIcon,
-  GlobalIcon,
-  ListIcon,
-  MapIcon,
-} from '@/assets/Icons';
 import { toggleMap } from '@/features/Booking/bookingSlices';
 
 import styles from './Footer.module.scss';
+import { GlobalIcon, ListIcon, MapIcon } from '@/assets/svgs';
 
 const cx = classNames.bind(styles);
 
@@ -54,9 +49,7 @@ const Footer = () => {
               Sitemap
             </li>
             <li className={cx('term-item', 'flex', 'bold')}>
-              <span>
-                <CurrencyPoundIcon />
-              </span>
+              <span>$</span>
               GBM
             </li>
             <li className={cx('term-item', 'flex', 'bold')}>

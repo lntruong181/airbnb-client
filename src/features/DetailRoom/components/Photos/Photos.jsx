@@ -1,5 +1,5 @@
-import { HeartIcon, MedalIcon, ShareIcon, StarIcon } from '@/assets/Icons';
 import images from '@/assets/Images';
+import { HeartIcon, ShareIcon, StarIcon } from '@/assets/svgs';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
@@ -33,14 +33,7 @@ const Photos = () => {
           <span className={cx('dot')}>.</span>
           <u className={cx('pointer')}>14 reviews</u>
           <span className={cx('dot')}>.</span>
-          <span className={cx('superhost', 'flex')}>
-            <strong>
-              <MedalIcon />
-            </strong>
-            Superhost
-          </span>
-          <span className={cx('dot')}>.</span>
-          <u className={cx('pointer')}>Cedar City, Utah, United States</u>
+          <u className={cx('pointer')}>Rockbridge, Ohio, United States</u>
         </div>
         <div className={cx('rate-right', 'flex')}>
           <Button shadowOnHover='true' className={cx('interact', 'flex')}>

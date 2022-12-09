@@ -43,6 +43,8 @@
   }
 }
 .term-item {
+  align-items: flex-end;
+
   font-size: 1.4rem;
   color: var(--text-color);
   cursor: pointer;
