@@ -15,6 +15,7 @@ import {
   GlobalIcon,
   HamburgerIcon,
   SearchIcon,
+  UserIcon,
 } from '@/assets/svgs';
 
 import styles from './Navbar.module.scss';
@@ -90,7 +91,7 @@ const Navbar = ({ isDetailLayout = false }) => {
                   <HamburgerIcon />
                 </span>
                 <span className={cx('user-avatar')}>
-                  <Image src={images.userIcon} alt={'user-icon'} />
+                  <UserIcon />
                 </span>
               </Button>
             </span>

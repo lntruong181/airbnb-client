@@ -1,5 +1,4 @@
-import images from '@/assets/Images';
-import { HeartIcon, ShareIcon, StarIcon } from '@/assets/svgs';
+import { GridIcon, ShareIcon, SmallHeartIcon, StarIcon } from '@/assets/svgs';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
@@ -40,7 +39,7 @@ const Photos = () => {
             <ShareIcon /> <u>Share</u>
           </Button>
           <Button shadowOnHover='true' className={cx('interact', 'flex')}>
-            <HeartIcon />
+            <SmallHeartIcon />
             <u>Save</u>
           </Button>
         </div>
@@ -91,11 +90,7 @@ const Photos = () => {
             isRound={true}
             scaleOnClick={true}
           >
-            <Image
-              className={cx('grid')}
-              src={images.gridIcon}
-              alt='grid-icon'
-            />{' '}
+            <GridIcon />
             Show all photos
           </Button>
         </div>

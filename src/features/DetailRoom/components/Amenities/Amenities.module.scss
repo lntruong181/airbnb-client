@@ -208,3 +208,37 @@
     transform: translate(50%, 0) scale(0.95);
   }
 }
+
+// HOMESTAY OFFERS
+
+.offer-list {
+  margin-top: 2rem;
+}
+.offer-box {
+  & + & {
+    margin-top: 1.5rem;
+  }
+}
+.offer-item {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+.offer-description {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+.show-btn {
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  gap: 0.5rem;
+  background-color: white;
+  padding: 1.3rem 2.6rem;
+
+  border: 1px solid black;
+
+  margin-top: 2rem;
+}

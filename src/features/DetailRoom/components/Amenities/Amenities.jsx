@@ -1,11 +1,20 @@
 import {
+  BalconyIcon,
   BedroomIcon,
   CalendarIcon,
+  CarbonBannedIcon,
+  CarIcon,
   DoorOpenIcon,
+  FlowerIcon,
   KnifeIcon,
+  PoolIcon,
   RightArrowIcon,
+  SmokeBannedIcon,
+  SnowFlowerIcon,
+  WifiIcon,
   WorkspaceIcon,
 } from '@/assets/svgs';
+import Button from '@/components/Button';
 import Icon from '@/components/Icon';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
@@ -15,6 +24,64 @@ import styles from './Amenities.module.scss';
 const cx = classNames.bind(styles);
 
 const Amenities = () => {
+  const offers = [
+    {
+      icon: <KnifeIcon />,
+      description: 'Kitchen',
+    },
+    {
+      icon: <WifiIcon />,
+      description: 'Wifi',
+    },
+    {
+      icon: <WorkspaceIcon />,
+      description: 'Dedicated workspace',
+    },
+    {
+      icon: <CarIcon />,
+      description: 'Free parking on premises',
+    },
+    {
+      icon: <PoolIcon />,
+      description: 'Private pool',
+    },
+    {
+      icon: <SnowFlowerIcon />,
+      description: 'Air conditioning',
+    },
+    {
+      icon: <BalconyIcon />,
+      description: 'Private patio or balcony',
+    },
+    {
+      icon: <FlowerIcon />,
+      description: 'Backyard',
+    },
+    {
+      icon: <CarbonBannedIcon />,
+      description: 'Carbon monoxide alarm',
+    },
+    {
+      icon: <SmokeBannedIcon />,
+      description: 'Smoke alarm',
+    },
+  ];
+  const highlightAmenities = [
+    {
+      icon: <WorkspaceIcon />,
+      tittle: 'Dedicated workspace',
+      description: 'Dedicated workspace',
+    },
+    {
+      icon: <DoorOpenIcon />,
+      tittle: 'Self check-in',
+      description: 'Check yourself in with the keypad.',
+    },
+    {
+      icon: <CalendarIcon />,
+      tittle: 'Check yourself in with the keypad.',
+    },
+  ];
   return (
     <main className={cx('container')}>
       <div className='container-fluid g-0'>
@@ -43,32 +110,16 @@ const Amenities = () => {
               </div>
             </div>
             <div className={cx('section', 'highlight-amenities')}>
-              <div className={cx('amenity')}>
-                <span className={cx('amenity-icon')}>
-                  <WorkspaceIcon />
-                </span>
-                <h4 className={cx('amenity-description')}>
-                  Dedicated workspace
-                  <span>Dedicated workspace</span>
-                </h4>
-              </div>
-              <div className={cx('amenity')}>
-                <span className={cx('amenity-icon')}>
-                  <DoorOpenIcon />
-                </span>
-                <h4 className={cx('amenity-description')}>
-                  Self check-in
-                  <span>Check yourself in with the keypad.</span>
-                </h4>
-              </div>
-              <div className={cx('amenity')}>
-                <span className={cx('amenity-icon')}>
-                  <CalendarIcon />
-                </span>
-                <h4 className={cx('amenity-description')}>
-                  Free cancellation before 12 Feb.
-                </h4>
-              </div>
+              {highlightAmenities &&
+                highlightAmenities.map((amenity) => (
+                  <div className={cx('amenity')}>
+                    <span className={cx('amenity-icon')}>{amenity.icon}</span>
+                    <h4 className={cx('amenity-description')}>
+                      {amenity.tittle}
+                      <span>{amenity?.description}</span>
+                    </h4>
+                  </div>
+                ))}
             </div>
             <div className={cx('section', 'homestay-benefit')}>
               <Image
@@ -167,30 +218,28 @@ const Amenities = () => {
             </div>
             <div className={cx('section', 'homestay-offers')}>
               <h1>What this place offers</h1>
-              <div className='container-fluid'>
-                <div className='row'>
-                  <div className='col'>
-                    <KnifeIcon />
-                  </div>
-                  <div className='col'>2 of 2</div>
-                </div>
-                <div className='row'>
-                  <div className='col'>1 of 2</div>
-                  <div className='col'>2 of 2</div>
-                </div>
-                <div className='row'>
-                  <div className='col'>1 of 2</div>
-                  <div className='col'>2 of 2</div>
-                </div>
-                <div className='row'>
-                  <div className='col'>1 of 2</div>
-                  <div className='col'>2 of 2</div>
-                </div>
-                <div className='row'>
-                  <div className='col'>1 of 2</div>
-                  <div className='col'>2 of 2</div>
+              <div className={cx('offer-list', 'container-fluid')}>
+                <div className={cx('offer-box', 'row')}>
+                  {offers &&
+                    offers.map((offer) => (
+                      <div
+                        className={cx('offer-item', 'col', 'col-lg-6', 'pb-4')}
+                      >
+                        {offer.icon}
+                        <span className={cx('offer-description')}>
+                          {offer.description}
+                        </span>
+                      </div>
+                    ))}
                 </div>
               </div>
+              <Button
+                className={cx('show-btn')}
+                isRound={true}
+                scaleOnClick={true}
+              >
+                Show all {offers.length} amenities
+              </Button>
             </div>
           </div>
           <div className='col-sm-4'>
