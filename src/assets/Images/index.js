@@ -13,6 +13,7 @@ import doorOpenIcon from './door-open.png';
 import calendarIcon from './calendar.png';
 import wifiIcon from './wifi.png';
 import gridIcon from './grid.png';
+import bedroomIcon from './bedroom.png';
 
 const images = {
   userIcon,
@@ -30,5 +31,6 @@ const images = {
   calendarIcon,
   wifiIcon,
   gridIcon,
+  bedroomIcon,
 };
 export default images;

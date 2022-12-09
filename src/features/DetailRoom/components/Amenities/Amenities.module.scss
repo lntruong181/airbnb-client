@@ -146,3 +146,65 @@
   font-weight: 600;
   margin-bottom: 16px;
 }
+
+// HOMESTAY BEDROOMS
+
+.bedroom {
+  margin-top: 2rem;
+}
+
+.bedroom-list {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+  padding: 0;
+
+  list-style-type: none;
+}
+.bedroom-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 2.4rem;
+  border: 1px solid var(--grey-color);
+  border-radius: 1rem;
+
+  flex: 1;
+}
+.bedroom-icon {
+  width: 24px;
+  height: 24px;
+}
+.bedroom-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+.bedroom-desc {
+  font-size: 1.4rem;
+}
+
+.next {
+  position: absolute;
+
+  right: 0;
+  transform: translate(50%, 0);
+
+  padding: 8px;
+
+  background-color: white;
+  box-shadow: 0 6px 16px rgba(0, 0, 0.1, 0.25);
+
+  &:hover {
+    transform: translate(50%, 0) scale(1.04);
+  }
+  &:active {
+    transform: translate(50%, 0) scale(0.95);
+  }
+}

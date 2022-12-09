@@ -1,5 +1,6 @@
 import { RightArrowIcon } from '@/assets/Icons';
 import images from '@/assets/Images';
+import Icon from '@/components/Icon';
 import Image from '@/components/Image';
 import classNames from 'classnames/bind';
 
@@ -135,6 +136,40 @@ const Amenities = () => {
                   <RightArrowIcon />
                 </span>
               </a>
+            </div>
+            <div className={cx('section', 'homestay-bedroom')}>
+              <h1>Where you'll sleep</h1>
+              <div className={cx('bedroom')}>
+                <ul className={cx('bedroom-list')}>
+                  <Icon className={cx('next')} isRound={true}>
+                    <RightArrowIcon />
+                  </Icon>
+                  <li className={cx('bedroom-card')}>
+                    <Image
+                      className={cx('bedroom-icon')}
+                      src={images.bedroomIcon}
+                    />
+                    <h3 className={cx('bedroom-heading')}>Bedroom 1</h3>
+                    <p className={cx('bedroom-desc')}>1 king bed</p>
+                  </li>
+                  <li className={cx('bedroom-card')}>
+                    <Image
+                      className={cx('bedroom-icon')}
+                      src={images.bedroomIcon}
+                    />
+                    <h3 className={cx('bedroom-heading')}>Bedroom 2</h3>
+                    <p className={cx('bedroom-desc')}>1 king bed</p>
+                  </li>
+                  <li className={cx('bedroom-card')}>
+                    <Image
+                      className={cx('bedroom-icon')}
+                      src={images.bedroomIcon}
+                    />
+                    <h3 className={cx('bedroom-heading')}>Bedroom 3</h3>
+                    <p className={cx('bedroom-desc')}>1 king bed</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className='col-sm-4'>
