@@ -2,9 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import images from '@/assets/Images';
 import Button from '@/components/Button';
-import Image from '@/components/Image';
 import Popper from '@/components/Popper';
 import Wrapper from '@/components/Popper/Wrapper';
 import Icon from '@/components/Icon';

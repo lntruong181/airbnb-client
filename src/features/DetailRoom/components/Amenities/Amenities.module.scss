@@ -6,6 +6,13 @@
 
   margin-top: 2rem;
 }
+.tittle {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.sub {
+  font-size: 1.4rem;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -241,4 +248,10 @@
   border: 1px solid black;
 
   margin-top: 2rem;
+}
+
+// CHECK IN
+
+.check-in {
+  padding: 4rem 0 2rem 0;
 }

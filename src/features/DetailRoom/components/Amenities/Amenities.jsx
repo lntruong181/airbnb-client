@@ -1,3 +1,5 @@
+import Calendar from 'react-calendar';
+
 import {
   BalconyIcon,
   BedroomIcon,
@@ -7,8 +9,10 @@ import {
   DoorOpenIcon,
   FlowerIcon,
   KnifeIcon,
+  LeftLightArrowIcon,
   PoolIcon,
   RightArrowIcon,
+  RightLightArrowIcon,
   SmokeBannedIcon,
   SnowFlowerIcon,
   WifiIcon,
@@ -20,6 +24,8 @@ import Image from '@/components/Image';
 import classNames from 'classnames/bind';
 
 import styles from './Amenities.module.scss';
+import 'react-calendar/dist/Calendar.css';
+import './calendar.scss';
 
 const cx = classNames.bind(styles);
 
@@ -89,7 +95,9 @@ const Amenities = () => {
           <div className='col-sm-7'>
             <div className={cx('section', 'title-container')}>
               <div className={cx('heading')}>
-                <h1>Private room in townhouse hosted by Bua</h1>
+                <h1 className={cx('tittle')}>
+                  Private room in townhouse hosted by Bua
+                </h1>
                 <div className={cx('description')}>
                   <span>3 guests</span>
                   <span>.</span>
@@ -192,7 +200,7 @@ const Amenities = () => {
               </a>
             </div>
             <div className={cx('section', 'homestay-bedroom')}>
-              <h1>Where you'll sleep</h1>
+              <h1 className={cx('tittle')}>Where you'll sleep</h1>
               <div className={cx('bedroom')}>
                 <ul className={cx('bedroom-list')}>
                   <Icon className={cx('next')} isRound={true}>
@@ -217,7 +225,7 @@ const Amenities = () => {
               </div>
             </div>
             <div className={cx('section', 'homestay-offers')}>
-              <h1>What this place offers</h1>
+              <h1 className={cx('tittle')}>What this place offers</h1>
               <div className={cx('offer-list', 'container-fluid')}>
                 <div className={cx('offer-box', 'row')}>
                   {offers &&
@@ -240,6 +248,19 @@ const Amenities = () => {
               >
                 Show all {offers.length} amenities
               </Button>
+            </div>
+            <div className={cx('section', 'check-in')}>
+              <h1 className={cx('tittle')}>5 nights in Rockbridge</h1>
+              <p className={cx('sub')}>Nov 5, 2023 - Nov 10, 2023</p>
+              <Calendar
+                showDoubleView={true}
+                selectRange={true}
+                tileClassName={'tile'}
+                className={'calendar'}
+                nextLabel={<RightLightArrowIcon />}
+                prevLabel={<LeftLightArrowIcon />}
+                calendarType='Hebrew'
+              ></Calendar>
             </div>
           </div>
           <div className='col-sm-4'>
