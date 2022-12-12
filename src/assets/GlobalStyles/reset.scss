@@ -75,6 +75,11 @@ textarea,
 select {
   font: inherit;
 }
+
+button {
+  border: none;
+  background-color: transparent;
+}
 /*
     9 Avoid text overflows
   */

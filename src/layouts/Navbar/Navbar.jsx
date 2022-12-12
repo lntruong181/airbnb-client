@@ -36,7 +36,6 @@ const Navbar = ({ isDetailLayout = false }) => {
         <span className={cx('logo-icon')}>
           <AirbnbIcon />
         </span>{' '}
-        <h1 className={cx('heading-text')}>airbnb</h1>
       </Link>
 
       <div className={cx('item', 'box')}>

@@ -7,6 +7,7 @@ export { ReactComponent as DoorOpenIcon } from './door-open.svg';
 export { ReactComponent as CalendarIcon } from './calendar.svg';
 export { ReactComponent as GridIcon } from './grid.svg';
 export { ReactComponent as BedroomIcon } from './bedroom.svg';
+export { ReactComponent as DownArrowIcon } from './down-arrow.svg';
 export { ReactComponent as RightArrowIcon } from './right-arrow.svg';
 export { ReactComponent as LeftLightArrowIcon } from './left-light-arrow.svg';
 export { ReactComponent as RightLightArrowIcon } from './right-light-arrow.svg';

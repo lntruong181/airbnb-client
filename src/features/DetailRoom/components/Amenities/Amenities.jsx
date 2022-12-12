@@ -7,6 +7,7 @@ import {
   CarbonBannedIcon,
   CarIcon,
   DoorOpenIcon,
+  DownArrowIcon,
   FlowerIcon,
   KnifeIcon,
   LeftLightArrowIcon,
@@ -26,10 +27,19 @@ import classNames from 'classnames/bind';
 import styles from './Amenities.module.scss';
 import 'react-calendar/dist/Calendar.css';
 import './calendar.scss';
+import Wrapper from '@/components/Popper/Wrapper';
 
 const cx = classNames.bind(styles);
 
 const Amenities = () => {
+  window.onscroll = function () {
+    scrollRotate();
+  };
+
+  function scrollRotate() {
+    // let image = document.getElementById('circle');
+    // image.style.transform = 'rotate(' + window.pageYOffset / 5 + 'deg)';
+  }
   const offers = [
     {
       icon: <KnifeIcon />,
@@ -263,8 +273,38 @@ const Amenities = () => {
               ></Calendar>
             </div>
           </div>
-          <div className='col-sm-4'>
-            <p>Sed ut perspiciatis...</p>
+          <div className={cx('homestay-checkout', 'col-sm-4')}>
+            <Wrapper className={cx('wrapper')}>
+              <div className={cx('wrapper-content')}>
+                <div className={cx('daily-prices')}>
+                  <span className={cx('price')}>
+                    <strong className={cx('price-num')}>$2,167</strong> night
+                  </span>
+                  <button className={cx('review')}>
+                    <u>1 review</u>
+                  </button>
+                </div>
+                <div className={cx('detail')}>
+                  <button className={cx('time')}>
+                    <div className={cx('box', 'check-in')}>
+                      <label className={cx('summary-tittle')}>Check-in</label>
+                      <p>12/21/2022</p>
+                    </div>
+                    <div className={cx('box', 'check-out')}>
+                      <label className={cx('summary-tittle')}>Checkout</label>
+                      <p>12/21/2022</p>
+                    </div>
+                  </button>
+                  <button className={cx('guest')}>
+                    <div className={cx('box')}>
+                      <label className={cx('summary-tittle')}>guest</label>
+                      <p>1 guest</p>
+                    </div>
+                    <DownArrowIcon />
+                  </button>
+                </div>
+              </div>
+            </Wrapper>
           </div>
         </div>
       </div>
