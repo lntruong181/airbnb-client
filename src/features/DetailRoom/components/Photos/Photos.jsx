@@ -45,7 +45,7 @@ const Photos = () => {
         </div>
       </div>
       <div className={cx('albums', 'flex')}>
-        <div className={cx('item')}>
+        <div className={cx('item', 'hover')}>
           <Image
             className={cx('hover')}
             src={imageCollections[3]}
@@ -53,36 +53,36 @@ const Photos = () => {
           />
         </div>
         <div className={cx('item', 'flex')}>
-          <span>
+          <div className={cx('hover')}>
             <Image
               className={cx('hover')}
               src={imageCollections[1]}
               alt='album-image-2'
             />
-          </span>
-          <span>
+          </div>
+          <div className={cx('hover')}>
             <Image
               className={cx('hover')}
               src={imageCollections[2]}
               alt='album-image-3'
             />
-          </span>
+          </div>
         </div>
         <div className={cx('item', 'flex')}>
-          <span>
+          <div className={cx('hover')}>
             <Image
               className={cx('hover')}
               src={imageCollections[4]}
               alt='album-image-4'
             />
-          </span>
-          <span>
+          </div>
+          <div className={cx('hover')}>
             <Image
               className={cx('hover')}
               src={imageCollections[3]}
               alt='album-image-5'
             />
-          </span>
+          </div>
         </div>
         <div className={cx('show-all')}>
           <Button
