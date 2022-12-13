@@ -67,8 +67,11 @@ const Offers = () => {
       <div className={cx('offer-list', 'container-fluid')}>
         <div className={cx('offer-box', 'row')}>
           {offers &&
-            offers.map((offer) => (
-              <div className={cx('offer-item', 'col', 'col-lg-6', 'pb-4')}>
+            offers.map((offer, index) => (
+              <div
+                key={index}
+                className={cx('offer-item', 'col', 'col-lg-6', 'pb-4')}
+              >
                 {offer.icon}
                 <span className={cx('offer-description')}>
                   {offer.description}

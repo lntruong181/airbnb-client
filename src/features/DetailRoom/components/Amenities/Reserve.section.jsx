@@ -14,11 +14,12 @@ const Reserve = () => {
   };
 
   function scrollRotate() {
-    // let image = document.getElementById('circle');
+    let reserveBox = document.getElementById('reserve-container');
+    debugger;
     // image.style.transform = 'rotate(' + window.pageYOffset / 5 + 'deg)';
   }
   return (
-    <>
+    <div className={cx('reserve-container')}>
       <Wrapper className={cx('summary-wrapper')}>
         <div className={cx('content')}>
           <div className={cx('daily-prices')}>
@@ -96,7 +97,7 @@ const Reserve = () => {
           Report this listing
         </u>
       </div>
-    </>
+    </div>
   );
 };
 

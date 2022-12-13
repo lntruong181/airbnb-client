@@ -9,6 +9,7 @@ import CheckIn from './CheckIn.section';
 import Reserve from './Reserve.section';
 
 import styles from './Amenities.module.scss';
+import Highlight from './Highlight';
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +20,7 @@ const Amenities = () => {
         <div className='row'>
           <div className='col-sm-7'>
             <Tittle />
+            <Highlight />
             <Benefit />
             <History />
             <Bedrooms />
