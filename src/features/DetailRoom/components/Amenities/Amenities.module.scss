@@ -374,6 +374,12 @@
   font-size: 1.4rem;
   text-align: center;
 }
+.reserve-container {
+  margin-top: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
 .summary-fees {
   width: 100%;
 

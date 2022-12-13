@@ -9,17 +9,8 @@ import styles from './Amenities.module.scss';
 const cx = classNames.bind(styles);
 
 const Reserve = () => {
-  window.onscroll = function () {
-    scrollRotate();
-  };
-
-  function scrollRotate() {
-    let reserveBox = document.getElementById('reserve-container');
-    debugger;
-    // image.style.transform = 'rotate(' + window.pageYOffset / 5 + 'deg)';
-  }
   return (
-    <div className={cx('reserve-container')}>
+    <div className={cx('reserve-container')} id='circle'>
       <Wrapper className={cx('summary-wrapper')}>
         <div className={cx('content')}>
           <div className={cx('daily-prices')}>
