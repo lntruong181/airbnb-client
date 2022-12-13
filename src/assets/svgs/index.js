@@ -28,3 +28,5 @@ export { ReactComponent as FlowerIcon } from './flower.svg';
 export { ReactComponent as CarbonBannedIcon } from './carbon-banned.svg';
 export { ReactComponent as SmokeBannedIcon } from './smoke-banned.svg';
 export { ReactComponent as SmallHeartIcon } from './small-heart.svg';
+export { ReactComponent as TagIcon } from './tag.svg';
+export { ReactComponent as FlaqIcon } from './flaq.svg';
