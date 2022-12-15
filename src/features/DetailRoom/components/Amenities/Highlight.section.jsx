@@ -26,8 +26,8 @@ const Highlight = () => {
   return (
     <div className={cx('section', 'highlight-amenities')}>
       {highlightAmenities &&
-        highlightAmenities.map((amenity) => (
-          <div className={cx('amenity')}>
+        highlightAmenities.map((amenity, index) => (
+          <div key={index} className={cx('amenity')}>
             <span className={cx('amenity-icon')}>{amenity.icon}</span>
             <h4 className={cx('amenity-description')}>
               {amenity.tittle}
