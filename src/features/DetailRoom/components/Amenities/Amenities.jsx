@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from 'react';
 const cx = classNames.bind(styles);
 
 const Amenities = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {

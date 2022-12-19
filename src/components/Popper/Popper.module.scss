@@ -15,3 +15,18 @@
 
   z-index: 1000;
 }
+
+.fade {
+  animation: fade 5s ease;
+}
+
+@keyframes fade {
+  from {
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
