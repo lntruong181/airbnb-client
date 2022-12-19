@@ -176,8 +176,10 @@ const Offers = () => {
       </Button>
       <Modal isOpen={isShowing} onClose={toggle} type={'small'}>
         <div className={cx('more-offer')}>
-          <div className={cx('close-icon')}>
-            <CancelIcon />
+          <div className={cx('close-section')}>
+            <p className={cx('close-icon')} onClick={toggle}>
+              <CancelIcon />
+            </p>
           </div>
           <div className={cx('more-offer-section')}>
             <h2 className={cx('more-offer-tittle')}>What this place offers</h2>

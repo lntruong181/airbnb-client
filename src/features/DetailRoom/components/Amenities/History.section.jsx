@@ -55,12 +55,12 @@ const History = () => {
           </span>
         </span>
       </div>
-      <a href='#' className={cx('more')}>
+      <button className={cx('more')}>
         Show More{' '}
         <span>
           <RightArrowIcon />
         </span>
-      </a>
+      </button>
     </div>
   );
 };

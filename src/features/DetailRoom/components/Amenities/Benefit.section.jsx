@@ -18,9 +18,9 @@ const Benefit = () => {
         Every booking includes free protection from Host cancellations, listing
         inaccuracies, and other issues like trouble checking in.
       </p>
-      <a href='#' className={cx('more')}>
+      <button href='#' className={cx('more')}>
         Learn more
-      </a>
+      </button>
     </div>
   );
 };

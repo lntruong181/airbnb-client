@@ -15,11 +15,12 @@ const Modal = ({ type = 'medium', isOpen, onClose, className, children }) => {
 
   return (
     <ReactModal
-      isOpen={isOpen}
-      preventScroll={true}
-      onRequestClose={onClose}
-      style={customStyles}
       className={cx('container', type)}
+      style={customStyles}
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      preventScroll={true}
+      shouldCloseOnEsc={true}
     >
       {children}
     </ReactModal>
