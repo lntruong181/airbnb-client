@@ -300,7 +300,7 @@
   font-weight: 600;
 
   gap: 0.5rem;
-  background-color: white;
+  background-color: var(--white-color);
   padding: 1.3rem 2.6rem;
 
   border: 1px solid black;
@@ -308,6 +308,51 @@
   margin-top: 2rem;
 }
 
+.more-offer {
+  overflow: hidden;
+  height: 100%;
+}
+.close-icon {
+  position: sticky;
+  padding: 2.4rem;
+}
+.more-offer-section {
+  padding: 2.4rem;
+
+  max-height: 100%;
+  overflow-y: scroll;
+}
+.more-offer-tittle {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.more-offer-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+
+  padding: var(--item-padding) 0;
+}
+.more-offers {
+  list-style-type: none;
+  padding: 0;
+}
+.more-offer-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 1.5rem;
+
+  padding: var(--item-padding) 0;
+  border-bottom: 1px solid var(--grey-color);
+}
+.more-offer-description {
+  display: flex;
+  flex-direction: column;
+}
+.more-offer-detail {
+  font-size: 1.4rem;
+  color: var(--icon-grey);
+}
 // CHECK IN
 
 .check-in {

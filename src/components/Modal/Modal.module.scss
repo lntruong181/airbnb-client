@@ -13,3 +13,27 @@
 //     opacity: 1;
 //   }
 // }
+
+.container {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.small {
+  width: 40vw;
+  height: 92vh;
+}
+.medium {
+  width: 50vw;
+  height: 92vh;
+}
+.large {
+  width: 100vw;
+  height: 100vh;
+}

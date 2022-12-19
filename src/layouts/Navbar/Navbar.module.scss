@@ -9,7 +9,7 @@
   justify-content: space-between;
 
   margin: auto;
-  padding: var(--default-padding);
+  padding: var(--home-layout-padding);
 
   &::before {
     content: '';
@@ -23,7 +23,7 @@
 // DETAIL LAYOUT
 
 .sm {
-  padding: var(--detail-default-padding);
+  padding: var(--detail-layout-padding);
   .box {
     width: 300px;
   }

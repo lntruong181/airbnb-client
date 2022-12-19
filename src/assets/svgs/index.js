@@ -30,3 +30,7 @@ export { ReactComponent as SmokeBannedIcon } from './smoke-banned.svg';
 export { ReactComponent as SmallHeartIcon } from './small-heart.svg';
 export { ReactComponent as TagIcon } from './tag.svg';
 export { ReactComponent as FlaqIcon } from './flaq.svg';
+export { ReactComponent as CancelIcon } from './cancel.svg';
+export { ReactComponent as HairDryerIcon } from './hair-dryer.svg';
+export { ReactComponent as ShampooIcon } from './shampoo.svg';
+export { ReactComponent as WaterIcon } from './water.svg';

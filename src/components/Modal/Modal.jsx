@@ -5,23 +5,21 @@ import ReactModal from 'react-modal';
 import styles from './Modal.module.scss';
 
 const cx = classNames.bind(styles);
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-const Modal = ({ isOpen, onClose, className, children }) => {
+
+const Modal = ({ type = 'medium', isOpen, onClose, className, children }) => {
+  const customStyles = {
+    overlay: {
+      backgroundColor: 'rgb(34 34 34 / 80%)',
+    },
+  };
+
   return (
     <ReactModal
       isOpen={isOpen}
-      style={customStyles}
       preventScroll={true}
       onRequestClose={onClose}
+      style={customStyles}
+      className={cx('container', type)}
     >
       {children}
     </ReactModal>

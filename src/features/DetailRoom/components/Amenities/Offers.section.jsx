@@ -2,15 +2,21 @@ import classNames from 'classnames/bind';
 
 import {
   BalconyIcon,
+  CancelIcon,
   CarbonBannedIcon,
   CarIcon,
   FlowerIcon,
+  HairDryerIcon,
   KnifeIcon,
   PoolIcon,
+  ShampooIcon,
   SmokeBannedIcon,
   SnowFlowerIcon,
+  WaterIcon,
   WifiIcon,
   WorkspaceIcon,
+  DoorOpenIcon,
+  CalendarIcon,
 } from '@/assets/svgs';
 import Button from '@/components/Button';
 import useModal from '@/hooks/useModal';
@@ -65,6 +71,82 @@ const Offers = () => {
     },
   ];
 
+  const moreOffers = [
+    {
+      tittle: 'Bathroom',
+      items: [
+        {
+          icon: <HairDryerIcon />,
+          description: 'Hair dryer',
+        },
+        {
+          icon: <ShampooIcon />,
+          description: 'Shampoo',
+        },
+        {
+          icon: <WaterIcon />,
+          description: 'Hot water',
+        },
+      ],
+    },
+    {
+      tittle: 'Bedroom and laundry',
+      items: [
+        {
+          icon: <HairDryerIcon />,
+          description: 'Washer',
+        },
+        {
+          icon: <ShampooIcon />,
+          description: 'Dryer',
+        },
+        {
+          icon: <WaterIcon />,
+          description: 'Essentials',
+          detail: 'Towels, bed sheets, soap, and toilet paper',
+        },
+        {
+          icon: <ShampooIcon />,
+          description: 'Hangers',
+        },
+        {
+          icon: <ShampooIcon />,
+          description: 'Iron',
+        },
+      ],
+    },
+    {
+      tittle: 'Entertainment',
+      items: [
+        {
+          icon: <KnifeIcon />,
+          description: 'TV',
+        },
+      ],
+    },
+    {
+      tittle: 'Family',
+      items: [
+        {
+          icon: <KnifeIcon />,
+          description: 'Crib',
+        },
+        {
+          icon: <WorkspaceIcon />,
+          description: 'Pack ’n play/Travel crib',
+        },
+        {
+          icon: <DoorOpenIcon />,
+          description: 'Children’s books and toys',
+        },
+        {
+          icon: <CalendarIcon />,
+          description: 'High chair',
+        },
+      ],
+    },
+  ];
+
   return (
     <div className={cx('section', 'homestay-offers')}>
       <h1 className={cx('tittle')}>What this place offers</h1>
@@ -92,8 +174,34 @@ const Offers = () => {
       >
         Show all {offers.length} amenities
       </Button>
-      <Modal isOpen={isShowing} onClose={toggle}>
-        <div></div>
+      <Modal isOpen={isShowing} onClose={toggle} type={'small'}>
+        <div className={cx('more-offer')}>
+          <div className={cx('close-icon')}>
+            <CancelIcon />
+          </div>
+          <div className={cx('more-offer-section')}>
+            <h2 className={cx('more-offer-tittle')}>What this place offers</h2>
+            {moreOffers &&
+              moreOffers.map((offers) => (
+                <div>
+                  <h3 className={cx('more-offer-heading')}>{offers.tittle}</h3>
+                  <ul className={cx('more-offers')}>
+                    {offers.items.map((offer) => (
+                      <li className={cx('more-offer-item')}>
+                        {offer.icon}{' '}
+                        <div className={cx('more-offer-description')}>
+                          {offer.description}{' '}
+                          <span className={cx('more-offer-detail')}>
+                            {offer?.detail}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
+        </div>
       </Modal>
     </div>
   );

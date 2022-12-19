@@ -17,19 +17,20 @@
   --calendar-hover-color: #f7f7f7;
   --icon-grey: #717171;
 
-  --default-padding: 0 8rem;
-  --detail-default-padding: 0 8rem;
+  --home-layout-padding: 0 8rem;
+  --detail-layout-padding: 0 8rem;
+  --item-padding: 2.4rem;
 }
 
 @media screen and (max-width: 850px) {
   :root {
-    --default-padding: 0 2.4rem;
-    --detail-default-padding: 0 4rem;
+    --home-layout-padding: 0 2.4rem;
+    --detail-layout-padding: 0 4rem;
   }
 }
 @media screen and (max-width: 550px) {
   :root {
-    --detail-default-padding: 0 2.4rem;
+    --detail-layout-padding: 0 2.4rem;
   }
 }
 
