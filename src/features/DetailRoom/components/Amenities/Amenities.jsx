@@ -31,7 +31,7 @@ const Amenities = () => {
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
-      if (window.scrollY > 700 && window.scrollY > lastScrollY) {
+      if (window.scrollY > 700) {
         // if scroll down show the navbar
         setShow(true);
       } else {
