@@ -20,9 +20,9 @@ import {
 } from '@/assets/svgs';
 import Button from '@/components/Button';
 import useModal from '@/hooks/useModal';
+import Modal from '@/components/Modal';
 
 import styles from './Amenities.module.scss';
-import Modal from '@/components/Modal';
 
 const cx = classNames.bind(styles);
 

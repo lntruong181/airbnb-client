@@ -185,6 +185,41 @@
   }
 }
 
+.more-benefit-box {
+  padding: 0 var(--item-padding);
+}
+.more-benefit-introduce {
+  padding: 0 0 var(--item-padding) 0;
+  border-bottom: 1px solid var(--grey-color);
+}
+.introduce-logo {
+  width: 15rem;
+  height: 3.2rem;
+}
+.more-benefit-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.content-section {
+  padding: var(--item-padding) 0 0 0;
+  width: 460px;
+  font-size: 1.6rem;
+}
+.content-tittle {
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  margin-bottom: 1rem;
+}
+.content-description {
+  color: var(--icon-grey);
+}
+.guide-btn {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 // HOMESTAY HISTORY
 
 .homestay-history {
