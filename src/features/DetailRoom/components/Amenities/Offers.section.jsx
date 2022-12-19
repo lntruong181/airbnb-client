@@ -13,12 +13,15 @@ import {
   WorkspaceIcon,
 } from '@/assets/svgs';
 import Button from '@/components/Button';
+import useModal from '@/hooks/useModal';
 
 import styles from './Amenities.module.scss';
+import Modal from '@/components/Modal';
 
 const cx = classNames.bind(styles);
 
 const Offers = () => {
+  const { isShowing, toggle } = useModal();
   const offers = [
     {
       icon: <KnifeIcon />,
@@ -61,6 +64,7 @@ const Offers = () => {
       description: 'Smoke alarm',
     },
   ];
+
   return (
     <div className={cx('section', 'homestay-offers')}>
       <h1 className={cx('tittle')}>What this place offers</h1>
@@ -80,9 +84,17 @@ const Offers = () => {
             ))}
         </div>
       </div>
-      <Button className={cx('show-btn')} isRound={true} scaleOnClick={true}>
+      <Button
+        className={cx('show-btn')}
+        isRound={true}
+        scaleOnClick={true}
+        onClick={toggle}
+      >
         Show all {offers.length} amenities
       </Button>
+      <Modal isOpen={isShowing} onClose={toggle}>
+        <div></div>
+      </Modal>
     </div>
   );
 };

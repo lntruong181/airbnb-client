@@ -10,7 +10,7 @@ import Reserve from './Reserve.section';
 import Highlight from './Highlight.section';
 
 import styles from './Amenities.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 

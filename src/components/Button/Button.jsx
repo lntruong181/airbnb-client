@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
 
 const Button = ({
-  handleOnClick,
+  onClick,
   className,
   isRound = false,
   shadowOnHover = false,
@@ -17,7 +17,7 @@ const Button = ({
   return (
     <button
       className={cx('container', className, round, scale, shadow)}
-      onClick={handleOnClick}
+      onClick={onClick}
     >
       {children}
     </button>
