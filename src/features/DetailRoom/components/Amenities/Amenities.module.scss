@@ -235,10 +235,29 @@
   overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
+  white-space: pre-line;
+  span {
+    white-space: pre-line;
+    span {
+      white-space: pre-line;
+    }
+  }
+}
+.short {
   display: -webkit-box;
   -webkit-line-clamp: 6; /* number of lines to show */
   line-clamp: 6;
   -webkit-box-orient: vertical;
+}
+.more-history-section {
+  padding: 0 var(--item-padding) var(--item-padding);
+
+  max-height: calc(100% - 7.4rem);
+  overflow-y: scroll;
+}
+.more-history-tittle {
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 
 .highlight {
@@ -358,7 +377,7 @@
 .more-offer-section {
   padding: 2.4rem;
 
-  max-height: 100%;
+  max-height: calc(100% - 7.4rem);
   overflow-y: scroll;
 }
 .more-offer-tittle {

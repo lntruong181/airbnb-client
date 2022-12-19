@@ -2,10 +2,10 @@ import classNames from 'classnames/bind';
 
 import Image from '@/components/Image';
 import useModal from '@/hooks/useModal';
+import { CancelIcon } from '@/assets/svgs';
+import Modal from '@/components/Modal';
 
 import styles from './Amenities.module.scss';
-import Modal from '@/components/Modal';
-import { CancelIcon } from '@/assets/svgs';
 
 const cx = classNames.bind(styles);
 
