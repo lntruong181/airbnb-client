@@ -62,7 +62,7 @@ const Offers = () => {
     },
   ];
   return (
-    <div className={cx('section', 'homestay-offers')} id='offer'>
+    <div className={cx('section', 'homestay-offers')}>
       <h1 className={cx('tittle')}>What this place offers</h1>
       <div className={cx('offer-list', 'container-fluid')}>
         <div className={cx('offer-box', 'row')}>

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const Reserve = () => {
   return (
-    <div className={cx('reserve-container')} id='circle'>
+    <div className={cx('reserve-container')}>
       <Wrapper className={cx('summary-wrapper')}>
         <div className={cx('content')}>
           <div className={cx('daily-prices')}>

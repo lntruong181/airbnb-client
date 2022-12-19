@@ -1,10 +1,16 @@
 .container {
-  position: relative;
   margin-top: 20px;
-  min-height: 100vh;
+  height: 300vh;
 }
 .rooms {
+  width: 100%;
   padding: var(--default-padding);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  gap: 2rem;
 }
 .booking {
   gap: 2.7rem;

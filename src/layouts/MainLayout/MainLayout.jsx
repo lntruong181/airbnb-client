@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import Container from '../components/Container';
 
 import Footer from '../Footer';
 import Navbar from '../Navbar';
@@ -9,11 +10,11 @@ const cx = classNames.bind(styles);
 
 const MainLayout = ({ children }) => {
   return (
-    <div className={cx('container')}>
+    <Container>
       <Navbar />
       {children}
       <Footer />
-    </div>
+    </Container>
   );
 };
 export default MainLayout;
