@@ -64,10 +64,12 @@ const Offers = () => {
     {
       icon: <CarbonBannedIcon />,
       description: 'Carbon monoxide alarm',
+      isBanned: true,
     },
     {
       icon: <SmokeBannedIcon />,
       description: 'Smoke alarm',
+      isBanned: true,
     },
   ];
 
@@ -159,7 +161,12 @@ const Offers = () => {
                 className={cx('offer-item', 'col', 'col-lg-6', 'pb-4')}
               >
                 {offer.icon}
-                <span className={cx('offer-description')}>
+                <span
+                  className={cx(
+                    'offer-description',
+                    offer?.isBanned ? 'banned' : ''
+                  )}
+                >
                   {offer.description}
                 </span>
               </div>
