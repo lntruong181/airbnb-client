@@ -1,6 +1,6 @@
 .swiper {
   width: 100%;
-  max-width: 270px;
+  max-width: var(--image-max-width);
   height: 100%;
 
   margin: 0;

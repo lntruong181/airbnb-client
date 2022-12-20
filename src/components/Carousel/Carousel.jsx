@@ -2,12 +2,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
 import { EffectCreative } from 'swiper';
 
-import 'swiper/css';
 import 'swiper/css/effect-creative';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import './styles.scss';
-
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 const Carousel = ({ children }) => {
   return (
     <Swiper

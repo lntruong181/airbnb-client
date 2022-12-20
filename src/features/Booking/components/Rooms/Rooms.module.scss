@@ -1,16 +1,33 @@
 .container {
-  margin-top: 20px;
+  max-width: var(--max-screen-width);
   height: 300vh;
+
+  margin-top: 20px;
 }
+// .rooms {
+//   width: 100%;
+//   padding: var(--home-layout-padding);
+
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: baseline;
+
+//   gap: 2rem;
+// }
 .rooms {
   width: 100%;
   padding: var(--home-layout-padding);
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-gap: var(--breakpoint-grid_row-gap, 0)
+    var(--breakpoint-grid_column-gap, 0);
 
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-
-  gap: 2rem;
+  grid-template-columns: repeat(
+    var(--breakpoint-grid_columns),
+    minmax(250px, 1fr)
+  );
 }
 .booking {
   gap: 2.7rem;

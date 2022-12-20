@@ -23,6 +23,40 @@
 
   --scroll-bar-color: #c5c5c5;
   --scroll-bar-bg-color: #f6f6f6;
+
+  --max-screen-width: 236rem;
+
+  --breakpoint-grid_columns: 6;
+  --breakpoint-grid_column-gap: 2.4rem;
+  --breakpoint-grid_row-gap: 4rem;
+  --image-max-height: 30rem;
+  --image-max-width: 49rem;
+}
+
+@media (max-width: 1880px) {
+  :root {
+    --breakpoint-grid_columns: 5;
+  }
+}
+@media (max-width: 1640px) {
+  :root {
+    --breakpoint-grid_columns: 4;
+  }
+}
+@media (max-width: 1171px) {
+  :root {
+    --breakpoint-grid_columns: 3;
+  }
+}
+@media (max-width: 950px) {
+  :root {
+    --breakpoint-grid_columns: 2;
+  }
+}
+@media (max-width: 550px) {
+  :root {
+    --breakpoint-grid_columns: 1;
+  }
 }
 
 @media screen and (max-width: 850px) {

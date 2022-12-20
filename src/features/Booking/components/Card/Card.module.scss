@@ -1,6 +1,4 @@
 .container {
-  max-width: 270px;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,12 +23,10 @@
   position: relative;
 }
 .carousel {
-  height: 250px;
+  height: var(--image-max-height);
 }
 .image {
   width: 100%;
-  min-height: 250px;
-  max-width: 270px;
 
   border-radius: 10px;
 }
