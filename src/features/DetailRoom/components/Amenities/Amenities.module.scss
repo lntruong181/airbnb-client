@@ -187,6 +187,9 @@
 
 .more-benefit-box {
   padding: 0 var(--item-padding);
+
+  height: 500px;
+  overflow: auto;
 }
 .more-benefit-introduce {
   padding: 0 0 var(--item-padding) 0;
@@ -199,7 +202,8 @@
 .more-benefit-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 .content-section {
   padding: var(--item-padding) 0 0 0;
@@ -218,6 +222,15 @@
 .guide-btn {
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1130px) {
+  .more-benefit-content {
+    flex-direction: column;
+  }
+  .content-section {
+    width: 100%;
+  }
 }
 
 // HOMESTAY HISTORY

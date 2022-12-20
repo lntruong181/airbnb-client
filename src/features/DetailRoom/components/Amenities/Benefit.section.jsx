@@ -33,6 +33,21 @@ const Benefit = () => {
       content:
         'If you ever feel unsafe, you’ll get priority access to specially-trained safety agents, day or night.',
     },
+    {
+      tittle: '24-hour Safety Line',
+      content:
+        'If you ever feel unsafe, you’ll get priority access to specially-trained safety agents, day or night.',
+    },
+    {
+      tittle: '24-hour Safety Line',
+      content:
+        'If you ever feel unsafe, you’ll get priority access to specially-trained safety agents, day or night.',
+    },
+    {
+      tittle: '24-hour Safety Line',
+      content:
+        'If you ever feel unsafe, you’ll get priority access to specially-trained safety agents, day or night.',
+    },
   ];
 
   return (
