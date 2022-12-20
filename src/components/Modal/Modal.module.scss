@@ -23,6 +23,11 @@
   max-width: 90vw;
   min-width: 1032px;
 }
+.large {
+  width: 100vw;
+  height: 100vh;
+}
+
 @media screen and (max-width: 1130px) {
   .medium {
     width: auto;

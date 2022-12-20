@@ -2,9 +2,9 @@ import classNames from 'classnames/bind';
 
 import { CancelIcon, RightArrowIcon } from '@/assets/svgs';
 import useModal from '@/hooks/useModal';
+import Modal from '@/components/Modal';
 
 import styles from './Amenities.module.scss';
-import Modal from '@/components/Modal';
 
 const cx = classNames.bind(styles);
 

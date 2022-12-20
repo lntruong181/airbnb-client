@@ -1,13 +1,24 @@
-import { GridIcon, ShareIcon, SmallHeartIcon, StarIcon } from '@/assets/svgs';
-import Button from '@/components/Button';
-import Image from '@/components/Image';
 import classNames from 'classnames/bind';
+
+import {
+  GridIcon,
+  LeftLightArrowIcon,
+  ShareIcon,
+  SmallHeartIcon,
+  StarIcon,
+} from '@/assets/svgs';
+import Button from '@/components/Button';
+import useModal from '@/hooks/useModal';
+import Image from '@/components/Image';
+import Modal from '@/components/Modal';
 
 import styles from './Photos.module.scss';
 
 const cx = classNames.bind(styles);
 
 const Photos = () => {
+  const { isShowing, toggle } = useModal();
+
   const imageCollections = [
     'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmlldG5hbSUyMHBvcHVsYXIlMjBsb2NhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     'https://images.unsplash.com/photo-1504457047772-27faf1c00561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMHBvcHVsYXIlMjBsb2NhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
@@ -89,11 +100,72 @@ const Photos = () => {
             className={cx('show-btn', 'flex')}
             isRound={true}
             scaleOnClick={true}
+            onClick={toggle}
           >
             <GridIcon />
             Show all photos
           </Button>
         </div>
+        <Modal isOpen={isShowing} onClose={toggle} type={'large'}>
+          <div className={cx('more-offer')}>
+            <div className={cx('close-section')}>
+              <div className={cx('close-section-box')}>
+                <p className={cx('close-icon')} onClick={toggle}>
+                  <LeftLightArrowIcon />
+                </p>
+                <div className={cx('rate-right', 'flex')}>
+                  <Button
+                    shadowOnHover='true'
+                    className={cx('interact', 'flex')}
+                  >
+                    <ShareIcon /> <u>Share</u>
+                  </Button>
+                  <Button
+                    shadowOnHover='true'
+                    className={cx('interact', 'flex')}
+                  >
+                    <SmallHeartIcon />
+                    <u>Save</u>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className={cx('album')}>
+              <div className={cx('album-column')}>
+                <div className={cx('album-row')}>
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=720'
+                  />
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/f4f7b242-db33-46fc-9080-c3d6a6fd55ec.jpeg?im_w=720'
+                  />
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/372e7d6f-7fb9-4668-92f0-25bb9a346814.jpeg?im_w=720'
+                  />
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/4756e699-f474-4ca7-8b77-06b12715a6cb.jpeg?im_w=720'
+                  />
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/fca892a4-3481-4ad1-9f92-404feaa42e9f.jpeg?im_w=720'
+                  />
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/36d8007a-0de5-439d-9fec-1c2d7b53a147.jpeg?im_w=720'
+                  />
+                  <Image
+                    className={cx('album-image')}
+                    src='https://a0.muscache.com/im/pictures/miso/Hosting-34113796/original/f95b0a2e-0272-469e-a56c-433b9cc4ffdb.jpeg?im_w=1200'
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

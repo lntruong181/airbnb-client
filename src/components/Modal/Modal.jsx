@@ -6,7 +6,7 @@ import styles from './Modal.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Modal = ({ type = 'medium', isOpen, onClose, className, children }) => {
+const Modal = ({ type, isOpen, onClose, className, children }) => {
   const customStyles = {
     overlay: {
       backgroundColor: 'rgb(34 34 34 / 80%)',
@@ -15,7 +15,7 @@ const Modal = ({ type = 'medium', isOpen, onClose, className, children }) => {
 
   return (
     <ReactModal
-      className={cx('container', type)}
+      className={cx('container', type, className)}
       style={customStyles}
       isOpen={isOpen}
       onRequestClose={onClose}
@@ -30,6 +30,7 @@ const Modal = ({ type = 'medium', isOpen, onClose, className, children }) => {
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  type: PropTypes.string.isRequired,
 };
 
 export default Modal;

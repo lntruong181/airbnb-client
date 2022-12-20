@@ -16,9 +16,34 @@
 * {
   margin: 0;
 }
+
+/*
+    2.1. CSS scroll bar
+  */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: 20px;
+  border: 3px solid var(--scroll-bar-bg-color);
+}
 /*
     3. Allow percentage-based heights in the application
   */
+.ReactModal__Body--open {
+  overflow: hidden;
+}
 html,
 body {
   height: 100%;
