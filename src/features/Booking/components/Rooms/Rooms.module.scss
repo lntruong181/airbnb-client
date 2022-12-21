@@ -4,16 +4,7 @@
 
   margin-top: 20px;
 }
-// .rooms {
-//   width: 100%;
-//   padding: var(--home-layout-padding);
 
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: baseline;
-
-//   gap: 2rem;
-// }
 .rooms {
   width: 100%;
   padding: var(--home-layout-padding);
@@ -27,6 +18,10 @@
   grid-template-columns: repeat(
     var(--breakpoint-grid_columns),
     minmax(250px, 1fr)
+  );
+  grid-template-rows: repeat(
+    var(--breakpoint-grid_columns),
+    minmax(35rem, var(--breakpoint-grid-max-height-row))
   );
 }
 .booking {

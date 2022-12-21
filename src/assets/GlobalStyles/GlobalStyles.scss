@@ -26,34 +26,40 @@
 
   --max-screen-width: 236rem;
 
+  --breakpoint-grid-max-height-row: 35rem;
   --breakpoint-grid_columns: 6;
   --breakpoint-grid_column-gap: 2.4rem;
-  --breakpoint-grid_row-gap: 4rem;
+  --breakpoint-grid_row-gap: 6rem;
 }
 
 @media (max-width: 1880px) {
   :root {
     --breakpoint-grid_columns: 5;
+    --breakpoint-grid-max-height-row: 40rem;
   }
 }
 @media (max-width: 1640px) {
   :root {
     --breakpoint-grid_columns: 4;
+    --breakpoint-grid-max-height-row: 43rem;
   }
 }
 @media (max-width: 1171px) {
   :root {
     --breakpoint-grid_columns: 3;
+    --breakpoint-grid-max-height-row: 41rem;
   }
 }
 @media (max-width: 950px) {
   :root {
     --breakpoint-grid_columns: 2;
+    --breakpoint-grid-max-height-row: 50rem;
   }
 }
 @media (max-width: 550px) {
   :root {
     --breakpoint-grid_columns: 1;
+    --breakpoint-grid-max-height-row: 57rem;
   }
 }
 

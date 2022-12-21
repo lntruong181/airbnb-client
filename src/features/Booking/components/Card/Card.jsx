@@ -27,9 +27,9 @@ const Card = () => {
       to={'rooms'}
       target='_blank'
       query={{ name: 'truong' }}
-      className={cx('container', 'col')}
+      className={cx('container')}
     >
-      <div className={cx('item')}>
+      <div className={cx('item', 'image-box')}>
         <div className={cx('carousel')}>
           <Carousel>
             {_.shuffle(imageCollections).map((image, index) => (
