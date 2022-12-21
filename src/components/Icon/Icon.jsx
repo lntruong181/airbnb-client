@@ -3,11 +3,13 @@ import styles from './Icon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Icon = ({ className, scaleOnHover, isRound, children }) => {
+const Icon = ({ className, onClick, scaleOnHover, isRound, children }) => {
   const scale = scaleOnHover ? 'scale' : '';
   const round = isRound ? 'round' : '';
   return (
-    <div className={cx('container', className, round, scale)}>{children}</div>
+    <div onClick={onClick} className={cx('container', className, round, scale)}>
+      {children}
+    </div>
   );
 };
 export default Icon;

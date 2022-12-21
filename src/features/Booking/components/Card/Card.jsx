@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 
 const cx = classNames.bind(styles);
 
-const Card = () => {
+const Card = ({ data }) => {
   const imageCollections = [
     'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmlldG5hbSUyMHBvcHVsYXIlMjBsb2NhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     'https://images.unsplash.com/photo-1504457047772-27faf1c00561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMHBvcHVsYXIlMjBsb2NhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
@@ -35,7 +35,7 @@ const Card = () => {
             {_.shuffle(imageCollections).map((image, index) => (
               <Image
                 src={image}
-                alt='beauty-spot'
+                alt={data.slug}
                 className={cx('image')}
                 key={index}
               />
@@ -48,18 +48,18 @@ const Card = () => {
       </div>
       <div className={cx('item')}>
         <div className={cx('location')}>
-          <h2 className={cx('location-heading')}>Broad Cove, Canada</h2>
+          <h2 className={cx('location-heading')}>{data.name}</h2>
           <p className={cx('location-rate')}>
             <strong>
               <StarIcon />
             </strong>
-            5.0
+            {data.ratingAverage}
           </p>
         </div>
-        <p className={cx('sub-heading')}>Added 11 weeks ago</p>
+        <p className={cx('sub-heading')}>Added {data.duration} weeks ago</p>
         <p className={cx('sub-heading')}>26 Feb - 3 Mar - Individual Host</p>
         <p className={cx('price')}>
-          <strong>$1,809 </strong>total
+          <strong>${data.price} </strong>night
         </p>
       </div>
     </Link>
