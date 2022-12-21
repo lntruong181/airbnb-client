@@ -7,6 +7,7 @@ import './styles.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+
 const Carousel = ({ children }) => {
   return (
     <Swiper
@@ -14,7 +15,7 @@ const Carousel = ({ children }) => {
         '--swiper-navigation-color': '#22222',
         '--swiper-pagination-color': '#fff',
         '--swiper-pagination-bullet-inactive-color': '#fff',
-        '--swiper-navigation-size': '11px',
+        '--swiper-navigation-size': '13px',
       }}
       grabCursor={true}
       effect={'creative'}

@@ -12,7 +12,6 @@ const cx = classNames.bind(styles);
 const Footer = () => {
   const dispatch = useDispatch();
   const isShowMap = useSelector((state) => state.booking.showMap);
-
   return (
     <footer className={cx('container', 'flex')}>
       <Button

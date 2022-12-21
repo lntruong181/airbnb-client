@@ -1,6 +1,4 @@
-import classNames from 'classnames/bind';
 import Container from '../components/Container';
-
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 
