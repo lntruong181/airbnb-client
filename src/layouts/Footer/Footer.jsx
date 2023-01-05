@@ -18,7 +18,7 @@ const Footer = () => {
         className={cx('show-map-btn')}
         isRound={true}
         scaleOnHover={true}
-        handleOnClick={() => dispatch(toggleMap())}
+        onClick={() => dispatch(toggleMap())}
       >
         {isShowMap ? 'Show map' : 'Show map'}
         {isShowMap ? <ListIcon /> : <MapIcon />}

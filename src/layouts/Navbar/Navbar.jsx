@@ -15,6 +15,7 @@ import {
   SearchIcon,
   UserIcon,
 } from '@/assets/svgs';
+import useModal from '@/hooks/useModal';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -22,10 +23,7 @@ import 'tippy.js/dist/tippy.css';
 const cx = classNames.bind(styles);
 
 const Navbar = ({ isDetailLayout = false }) => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const toggleMenu = () => {
-    setOpenMenu((previous) => !previous);
-  };
+  const { isShowing, toggle } = useModal();
 
   return (
     <section
@@ -62,8 +60,8 @@ const Navbar = ({ isDetailLayout = false }) => {
         </Button>
         <div>
           <Popper
-            visible={openMenu}
-            handleClickOutside={setOpenMenu}
+            visible={isShowing}
+            handleClickOutside={toggle}
             placement='bottom-end'
             className={cx('tooltip')}
             render={() => {
@@ -83,7 +81,7 @@ const Navbar = ({ isDetailLayout = false }) => {
             }}
           >
             <span tabIndex='0'>
-              <Button handleOnClick={toggleMenu} className={cx('user')}>
+              <Button onClick={toggle} className={cx('user')}>
                 <span className={cx('user-icon')}>
                   <HamburgerIcon />
                 </span>

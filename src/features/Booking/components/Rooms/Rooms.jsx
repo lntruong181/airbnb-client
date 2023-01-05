@@ -7,21 +7,16 @@ import Card from '../Card';
 import styles from './Rooms.module.scss';
 import { useEffect } from 'react';
 import { getTours, tourSelector } from '@/app/sagas/tours/tourSlice';
-import { imageSelector, getImage } from '@/app/sagas/image/imageSlice';
 
 const cx = classNames.bind(styles);
 
 const Rooms = () => {
   const dispatch = useDispatch();
   const tours = useSelector(tourSelector);
-  const image = useSelector(imageSelector);
   const isShowMap = useSelector((state) => state.booking.showMap);
 
   useEffect(() => {
     dispatch(getTours());
-  }, []);
-  useEffect(() => {
-    dispatch(getImage());
   }, []);
 
   return (
