@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +8,7 @@ import Icon from '@/components/Icon';
 import { ROUTE } from '@/enum/routes.enums';
 import {
   AirbnbIcon,
+  CancelIcon,
   FilterIcon,
   GlobalIcon,
   HamburgerIcon,
@@ -16,16 +16,41 @@ import {
   UserIcon,
 } from '@/assets/svgs';
 import useModal from '@/hooks/useModal';
+import Modal from '@/components/Modal';
+import Select from '@/components/Select';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
-import Modal from '@/components/Modal';
+import { VERSION } from 'lodash';
 
 const cx = classNames.bind(styles);
 
 const Navbar = ({ isDetailLayout = false }) => {
   const { isShowing, toggle } = useModal();
   const { isShowing: isOpenRegisForm, toggle: toggleRegisForm } = useModal();
+
+  const mockOptions = [
+    { value: '1', displayValue: 'Åland Islands (+358)' },
+    { value: '2', displayValue: 'Albania (+355)' },
+    { value: '3', displayValue: 'Algeria (+213)' },
+    { value: '4', displayValue: 'American Samoa (+1)' },
+    { value: '5', displayValue: 'Andorra (+376)' },
+    { value: '6', displayValue: 'Angola (+244)' },
+    { value: '7', displayValue: 'Antigua & Barbuda (+1)' },
+    { value: '8', displayValue: 'Armenia (+374)' },
+    { value: '9', displayValue: 'Argentina (+54)' },
+    { value: '10', displayValue: 'Australia (+61)' },
+    { value: '1', displayValue: 'Åland Islands (+358)' },
+    { value: '2', displayValue: 'Albania (+355)' },
+    { value: '3', displayValue: 'Algeria (+213)' },
+    { value: '4', displayValue: 'American Samoa (+1)' },
+    { value: '5', displayValue: 'Andorra (+376)' },
+    { value: '6', displayValue: 'Angola (+244)' },
+    { value: '7', displayValue: 'Antigua & Barbuda (+1)' },
+    { value: '8', displayValue: 'Armenia (+374)' },
+    { value: '9', displayValue: 'Argentina (+54)' },
+    { value: '10', displayValue: 'Australia (+61)' },
+  ];
 
   return (
     <section
@@ -97,8 +122,20 @@ const Navbar = ({ isDetailLayout = false }) => {
           </Popper>
         </div>
       </div>
-      <Modal type='md' isOpen={isOpenRegisForm} onClose={toggleRegisForm}>
-        <p>rgergreg</p>
+      <Modal isOpen={isOpenRegisForm} onClose={toggleRegisForm}>
+        <div className={cx('registration')}>
+          <div className={cx('close-section')}>
+            <p className={cx('close-icon')} onClick={toggleRegisForm}>
+              <CancelIcon />
+            </p>
+            <h3 className={cx('registration-tittle')}>Log in or sign up</h3>
+          </div>
+          <div className={cx('welcome-section')}>
+            <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
+            <Select label='Country/Region' options={mockOptions} />
+          </div>
+          <div className={cx('action-section')}></div>
+        </div>
       </Modal>
 
       <div className={cx('where')}>

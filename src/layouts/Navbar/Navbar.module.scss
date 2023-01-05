@@ -233,6 +233,45 @@
   }
 }
 
+// REGISTRATION FORM
+
+.registration {
+  width: 568px;
+  height: 682px;
+
+  &-tittle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: auto;
+  }
+}
+.close-section {
+  position: relative;
+
+  width: 100%;
+  padding: 2.4rem;
+
+  display: flex;
+  align-items: center;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid var(--grey-color);
+  }
+}
+.close-icon {
+  margin: 0;
+}
+.welcome-section {
+  padding: 2.4rem;
+}
+.welcome-tittle {
+  font-size: 2.2rem;
+}
 @media screen and (max-width: 1200px) {
   .heading-text {
     visibility: hidden;

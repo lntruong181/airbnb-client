@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+}
+.text {
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--icon-grey);
+
+  transform: translate(15%, 30%);
+
+  z-index: 9;
+}
+.list {
+  position: relative;
+  width: 100%;
+  padding: 2.5rem 1rem 1rem 1rem;
+  border: 1px solid var(--grey-color);
+  border-radius: 0.8rem;
+  z-index: 1;
+  font-size: 1.6rem;
+}
+.item {
+  font-size: 1.6rem;
+}
