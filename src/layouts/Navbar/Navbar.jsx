@@ -19,11 +19,13 @@ import useModal from '@/hooks/useModal';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
+import Modal from '@/components/Modal';
 
 const cx = classNames.bind(styles);
 
 const Navbar = ({ isDetailLayout = false }) => {
   const { isShowing, toggle } = useModal();
+  const { isShowing: isOpenRegisForm, toggle: toggleRegisForm } = useModal();
 
   return (
     <section
@@ -68,7 +70,9 @@ const Navbar = ({ isDetailLayout = false }) => {
               return (
                 <Wrapper>
                   <div className={cx('tooltip-box')}>
-                    <p className={cx('tooltip-item')}>Sign up</p>
+                    <p className={cx('tooltip-item')} onClick={toggleRegisForm}>
+                      Sign up
+                    </p>
                     <p className={cx('tooltip-item')}>Sign in</p>
                   </div>
                   <div className={cx('tooltip-box')}>
@@ -93,6 +97,9 @@ const Navbar = ({ isDetailLayout = false }) => {
           </Popper>
         </div>
       </div>
+      <Modal type='md' isOpen={isOpenRegisForm} onClose={toggleRegisForm}>
+        <p>rgergreg</p>
+      </Modal>
 
       <div className={cx('where')}>
         <Icon className={cx('search-btn')}>

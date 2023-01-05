@@ -18,6 +18,7 @@ const Modal = ({ type, isOpen, onClose, className, children }) => {
       className={cx('container', type, className)}
       style={customStyles}
       isOpen={isOpen}
+      ariaHideApp={false}
       onRequestClose={onClose}
       preventScroll={true}
       shouldCloseOnEsc={true}
