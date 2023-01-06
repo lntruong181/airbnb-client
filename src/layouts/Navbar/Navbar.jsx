@@ -1,5 +1,8 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from '@/components/Button';
 import Popper from '@/components/Popper';
@@ -18,12 +21,16 @@ import {
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import Select from '@/components/Select';
+import Input from '@/components/Input';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
-import { VERSION } from 'lodash';
 
 const cx = classNames.bind(styles);
+
+const schema = yup.object().shape({
+  phone: yup.number().min(4).max(13).required('Please enter your password.'),
+});
 
 const Navbar = ({ isDetailLayout = false }) => {
   const { isShowing, toggle } = useModal();
@@ -51,6 +58,20 @@ const Navbar = ({ isDetailLayout = false }) => {
     { value: '9', displayValue: 'Argentina (+54)' },
     { value: '10', displayValue: 'Australia (+61)' },
   ];
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(schema),
+  });
+  const onSubmit = (data) => {};
+  console.log('🚀 ~ errors', errors);
+
+  console.log(watch('phone'));
 
   return (
     <section
@@ -95,7 +116,10 @@ const Navbar = ({ isDetailLayout = false }) => {
               return (
                 <Wrapper>
                   <div className={cx('tooltip-box')}>
-                    <p className={cx('tooltip-item')} onClick={toggleRegisForm}>
+                    <p
+                      className={cx('tooltip-item', 'highlight')}
+                      onClick={toggleRegisForm}
+                    >
                       Sign up
                     </p>
                     <p className={cx('tooltip-item')}>Sign in</p>
@@ -133,6 +157,12 @@ const Navbar = ({ isDetailLayout = false }) => {
           <div className={cx('welcome-section')}>
             <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
             <Select label='Country/Region' options={mockOptions} />
+            {/* <Input type='text' label='Phone number' /> */}
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input type='number' {...register('phone')} />
+              {errors && <label>{errors.phone?.message}</label>}
+              <input type='submit' />
+            </form>
           </div>
           <div className={cx('action-section')}></div>
         </div>
