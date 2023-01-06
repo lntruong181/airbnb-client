@@ -1,17 +1,18 @@
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './Select.module.scss';
 const cx = classNames.bind(styles);
 
-const Select = ({ options, label }) => {
+const Select = ({ options, label, className }) => {
   return (
-    <div className={cx('wrap')}>
-      <label className={cx('text')}>{label}</label>
+    <div className={cx('container', className)}>
+      {label && <label className={cx('text')}>{label}</label>}
       <select className={cx('list')}>
         {options &&
-          options.map((option) => {
+          options.map((option, index) => {
             return (
-              <option className={cx('item')} value={option?.value}>
+              <option className={cx('item')} key={index} value={option?.value}>
                 {option.displayValue}
               </option>
             );
@@ -19,6 +20,12 @@ const Select = ({ options, label }) => {
       </select>
     </div>
   );
+};
+
+Select.propTypes = {
+  options: PropTypes.array.isRequired,
+  label: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Select;
