@@ -20,6 +20,9 @@ import {
   SearchIcon,
   UserIcon,
   FacebookIcon,
+  GoogleIcon,
+  AppleIcon,
+  GmailIcon,
 } from '@/assets/svgs';
 
 import useModal from '@/hooks/useModal';
@@ -201,6 +204,30 @@ const Navbar = ({ isDetailLayout = false }) => {
               icon={<FacebookIcon />}
             >
               Continue with Facebook
+            </Button>
+            <Button
+              className={cx('alternative-btn')}
+              isRound={true}
+              scaleOnClick={true}
+              icon={<GoogleIcon />}
+            >
+              Continue with Google
+            </Button>
+            <Button
+              className={cx('alternative-btn')}
+              isRound={true}
+              scaleOnClick={true}
+              icon={<AppleIcon />}
+            >
+              Continue with Apple
+            </Button>
+            <Button
+              className={cx('alternative-btn')}
+              isRound={true}
+              scaleOnClick={true}
+              icon={<GmailIcon />}
+            >
+              Continue with Gmail
             </Button>
           </div>
           <div className={cx('action-section')}></div>
