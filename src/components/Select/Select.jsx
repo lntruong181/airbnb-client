@@ -6,9 +6,9 @@ const cx = classNames.bind(styles);
 
 const Select = ({ options, label, className }) => {
   return (
-    <div className={cx('container', className)}>
+    <div className={cx('container')}>
       {label && <label className={cx('text')}>{label}</label>}
-      <select className={cx('list')}>
+      <select className={cx('list', className)}>
         {options &&
           options.map((option, index) => {
             return (

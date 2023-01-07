@@ -46,11 +46,18 @@ const Photos = () => {
           <u className={cx('pointer')}>Rockbridge, Ohio, United States</u>
         </div>
         <div className={cx('rate-right', 'flex')}>
-          <Button shadowOnHover='true' className={cx('interact', 'flex')}>
-            <ShareIcon /> <u>Share</u>
+          <Button
+            shadowOnHover='true'
+            className={cx('interact', 'flex')}
+            icon={<ShareIcon />}
+          >
+            <u>Share</u>
           </Button>
-          <Button shadowOnHover='true' className={cx('interact', 'flex')}>
-            <SmallHeartIcon />
+          <Button
+            shadowOnHover='true'
+            className={cx('interact', 'flex')}
+            icon={<SmallHeartIcon />}
+          >
             <u>Save</u>
           </Button>
         </div>
@@ -97,12 +104,12 @@ const Photos = () => {
         </div>
         <div className={cx('show-all')}>
           <Button
-            className={cx('show-btn', 'flex')}
+            className={cx('show-btn')}
             isRound={true}
             scaleOnClick={true}
             onClick={toggle}
+            icon={<GridIcon />}
           >
-            <GridIcon />
             Show all photos
           </Button>
         </div>
@@ -117,14 +124,15 @@ const Photos = () => {
                   <Button
                     shadowOnHover='true'
                     className={cx('interact', 'flex')}
+                    icon={<ShareIcon />}
                   >
-                    <ShareIcon /> <u>Share</u>
+                    <u>Share</u>
                   </Button>
                   <Button
                     shadowOnHover='true'
                     className={cx('interact', 'flex')}
+                    icon={<SmallHeartIcon />}
                   >
-                    <SmallHeartIcon />
                     <u>Save</u>
                   </Button>
                 </div>

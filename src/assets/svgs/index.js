@@ -34,3 +34,8 @@ export { ReactComponent as CancelIcon } from './cancel.svg';
 export { ReactComponent as HairDryerIcon } from './hair-dryer.svg';
 export { ReactComponent as ShampooIcon } from './shampoo.svg';
 export { ReactComponent as WaterIcon } from './water.svg';
+export { ReactComponent as DangerIcon } from './danger.svg';
+export { ReactComponent as FacebookIcon } from './facebook.svg';
+export { ReactComponent as GoogleIcon } from './google.svg';
+export { ReactComponent as AppleIcon } from './apple.svg';
+export { ReactComponent as GmailIcon } from './gmail.svg';

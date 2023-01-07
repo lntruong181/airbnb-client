@@ -1,10 +1,23 @@
 .container {
   position: relative;
-  background-color: transparent;
-  border: inherit;
   cursor: pointer;
 
   transition: all 0.2s ease;
+
+  &:has(.icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.icon {
+  margin: auto;
+}
+
+.content {
+  flex: 1 1;
+  margin: auto;
+  line-height: 2rem;
 }
 
 .shadow:hover {

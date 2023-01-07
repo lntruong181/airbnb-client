@@ -146,7 +146,7 @@
   align-items: center;
   justify-content: space-around;
 
-  padding: 5px;
+  padding: 0.5rem 1rem;
 
   border: 1px solid var(--grey-color);
   border-radius: 30px;
@@ -155,21 +155,12 @@
 
   cursor: pointer;
 
+  color: var(--icon-grey);
+  span {
+    margin-left: 1rem;
+  }
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  }
-
-  &-icon {
-    svg {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  &-avatar {
-    width: 30px;
-    height: 30px;
-    color: var(--icon-grey);
   }
 }
 
@@ -276,7 +267,93 @@
 .welcome-tittle {
   font-size: 2.2rem;
 }
+.welcome-form {
+  position: relative;
+  width: 100%;
 
+  display: flex;
+  flex-flow: column wrap;
+
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--grey-color);
+
+  &::after {
+    content: 'or';
+    position: absolute;
+    background-color: var(--white-color);
+    padding: 0 1rem;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+.welcome-select {
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+.welcome-input {
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  padding: 1.75rem 1rem;
+  border: 1px solid var(--text-color);
+  border-top: none;
+  border-radius: 0 0 0.8rem 0.8rem;
+  z-index: 1;
+  font-size: 1.6rem;
+}
+.text-danger {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-danger);
+  input + & {
+    margin-top: 0.5rem;
+  }
+}
+.welcome-btn {
+  color: var(--white-color);
+  background-color: var(--hot-pink-color);
+
+  border: none;
+  border-radius: 0.8rem;
+
+  padding: 1rem;
+  margin-top: 1rem;
+
+  cursor: pointer;
+  transition: transform 200ms ease;
+
+  &[value] {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.95);
+  }
+}
+.welcome-hint {
+  margin-top: 1rem;
+  .highlight {
+    text-decoration: underline;
+  }
+}
+.alternative-btn {
+  width: 100%;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  border: 1px solid black;
+  background-color: transparent;
+
+  padding: 1.3rem 2.3rem;
+  margin-top: 2rem;
+
+  &:active,
+  &:hover {
+    background-color: var(--light-grey);
+  }
+}
 @media screen and (max-width: 1200px) {
   .heading-text {
     visibility: hidden;

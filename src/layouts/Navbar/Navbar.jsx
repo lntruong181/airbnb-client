@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { lazy } from 'react';
 
 import Button from '@/components/Button';
 import Popper from '@/components/Popper';
@@ -14,22 +15,27 @@ import {
   CancelIcon,
   FilterIcon,
   GlobalIcon,
+  DangerIcon,
   HamburgerIcon,
   SearchIcon,
   UserIcon,
+  FacebookIcon,
 } from '@/assets/svgs';
+
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import Select from '@/components/Select';
-import Input from '@/components/Input';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
 
 const cx = classNames.bind(styles);
-
 const schema = yup.object().shape({
-  phone: yup.number().min(4).max(13).required('Please enter your password.'),
+  phone: yup
+    .string()
+    .required('Phone number is required.')
+    .min(4, 'Phone number is too short or contains invalid characters.')
+    .max(13),
 });
 
 const Navbar = ({ isDetailLayout = false }) => {
@@ -69,7 +75,6 @@ const Navbar = ({ isDetailLayout = false }) => {
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => {};
-  console.log('🚀 ~ errors', errors);
 
   console.log(watch('phone'));
 
@@ -134,13 +139,12 @@ const Navbar = ({ isDetailLayout = false }) => {
             }}
           >
             <span tabIndex='0'>
-              <Button onClick={toggle} className={cx('user')}>
-                <span className={cx('user-icon')}>
-                  <HamburgerIcon />
-                </span>
-                <span className={cx('user-avatar')}>
-                  <UserIcon />
-                </span>
+              <Button
+                onClick={toggle}
+                className={cx('user')}
+                icon={<HamburgerIcon />}
+              >
+                <UserIcon />
               </Button>
             </span>
           </Popper>
@@ -156,13 +160,48 @@ const Navbar = ({ isDetailLayout = false }) => {
           </div>
           <div className={cx('welcome-section')}>
             <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
-            <Select label='Country/Region' options={mockOptions} />
+
             {/* <Input type='text' label='Phone number' /> */}
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <input type='number' {...register('phone')} />
-              {errors && <label>{errors.phone?.message}</label>}
-              <input type='submit' />
+            <form
+              className={cx('welcome-form')}
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <Select
+                className={cx('welcome-select')}
+                label='Country/Region'
+                options={mockOptions}
+              />
+              <input
+                className={cx('welcome-input')}
+                type='number'
+                {...register('phone')}
+              />
+              {errors.phone ? (
+                <label className={cx('text-danger')}>
+                  <DangerIcon /> {errors.phone?.message}
+                </label>
+              ) : (
+                <p className={cx('welcome-hint')}>
+                  We’ll call or text you to confirm your number. Standard
+                  message and data rates apply.{' '}
+                  <span className={cx('highlight')}>Privacy Policy</span>
+                </p>
+              )}
+
+              <input
+                className={cx('welcome-btn')}
+                type='submit'
+                value={'Continue'}
+              />
             </form>
+            <Button
+              className={cx('alternative-btn')}
+              isRound={true}
+              scaleOnClick={true}
+              icon={<FacebookIcon />}
+            >
+              Continue with Facebook
+            </Button>
           </div>
           <div className={cx('action-section')}></div>
         </div>
