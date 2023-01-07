@@ -156,9 +156,9 @@ const Navbar = ({ isDetailLayout = false }) => {
       <Modal isOpen={isOpenRegisForm} onClose={toggleRegisForm}>
         <div className={cx('registration')}>
           <div className={cx('close-section')}>
-            <p className={cx('close-icon')} onClick={toggleRegisForm}>
+            <Icon onClick={toggleRegisForm}>
               <CancelIcon />
-            </p>
+            </Icon>
             <h3 className={cx('registration-tittle')}>Log in or sign up</h3>
           </div>
           <div className={cx('welcome-section')}>

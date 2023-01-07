@@ -21,6 +21,7 @@ import {
 import Button from '@/components/Button';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
+import Icon from '@/components/Icon';
 
 import styles from './Amenities.module.scss';
 
@@ -184,9 +185,9 @@ const Offers = () => {
       <Modal isOpen={isShowing} onClose={toggle} type={'small'}>
         <div className={cx('more-offer')}>
           <div className={cx('close-section')}>
-            <p className={cx('close-icon')} onClick={toggle}>
+            <Icon onClick={toggle}>
               <CancelIcon />
-            </p>
+            </Icon>
           </div>
           <div className={cx('more-offer-section')}>
             <h2 className={cx('more-offer-tittle')}>What this place offers</h2>

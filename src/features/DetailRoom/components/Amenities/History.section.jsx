@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { CancelIcon, RightArrowIcon } from '@/assets/svgs';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
+import Icon from '@/components/Icon';
 
 import styles from './Amenities.module.scss';
 
@@ -68,9 +69,9 @@ const History = () => {
       <Modal isOpen={isShowing} onClose={toggle} type={'small'}>
         <div className={cx('more-offer')}>
           <div className={cx('close-section')}>
-            <p className={cx('close-icon')} onClick={toggle}>
+            <Icon onClick={toggle}>
               <CancelIcon />
-            </p>
+            </Icon>
           </div>
           <div className={cx('more-history-section')}>
             <h2 className={cx('more-history-tittle')}>
