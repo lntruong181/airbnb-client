@@ -6,7 +6,8 @@ const cx = classNames.bind(styles);
 const Button = ({
   onClick,
   className,
-  icon,
+  leftIcon,
+  rightIcon,
   isRound = false,
   shadowOnHover = false,
   scaleOnClick = false,
@@ -20,8 +21,9 @@ const Button = ({
       className={cx('container', className, round, scale, shadow)}
       onClick={onClick}
     >
-      {icon && <label className={cx('icon')}>{icon}</label>}
+      {leftIcon && <label className={cx('icon')}>{leftIcon}</label>}
       <span className={cx('content')}>{children}</span>
+      {rightIcon && <label className={cx('icon')}>{rightIcon}</label>}
     </button>
   );
 };

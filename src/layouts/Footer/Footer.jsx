@@ -19,9 +19,9 @@ const Footer = () => {
         isRound={true}
         scaleOnHover={true}
         onClick={() => dispatch(toggleMap())}
+        rightIcon={isShowMap ? <ListIcon /> : <MapIcon />}
       >
-        {isShowMap ? 'Show map' : 'Show map'}
-        {isShowMap ? <ListIcon /> : <MapIcon />}
+        {isShowMap ? 'Show list' : 'Show map'}
       </Button>
       {isShowMap || (
         <div className={cx('term', 'flex')}>

@@ -145,7 +145,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               <Button
                 onClick={toggle}
                 className={cx('user')}
-                icon={<HamburgerIcon />}
+                leftIcon={<HamburgerIcon />}
               >
                 <UserIcon />
               </Button>
