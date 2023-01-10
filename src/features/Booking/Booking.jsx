@@ -7,6 +7,7 @@ import GlobalMap from '@/components/GlobalMap';
 
 const Booking = () => {
   const isShowMap = useSelector((state) => state.booking.showMap);
+
   return isShowMap ? (
     <GlobalMap />
   ) : (

@@ -4,11 +4,11 @@ import styles from './Form.module.scss';
 
 const cx = classNames.bind(styles);
 
-const FormGroup = ({ errors, children }) => {
+const FormGroup = ({ errors, name, children }) => {
   return (
     <div className={cx('container')}>
       {children}
-      {errors && <label>{errors.phone?.message}</label>}
+      {errors && <label>{errors[name]?.message}</label>}
     </div>
   );
 };

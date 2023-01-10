@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { lazy } from 'react';
+import { useState } from 'react';
 
 import Button from '@/components/Button';
 import Popper from '@/components/Popper';
@@ -28,6 +28,7 @@ import {
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import Select from '@/components/Select';
+import Input from '@/components/Input';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
@@ -38,34 +39,32 @@ const schema = yup.object().shape({
     .string()
     .required('Phone number is required.')
     .min(4, 'Phone number is too short or contains invalid characters.')
-    .max(13),
+    .max(
+      13,
+      'That phone number is either too short or too long. Make sure you have entered the right number and try again.'
+    ),
 });
 
 const Navbar = ({ isDetailLayout = false }) => {
+  const [phoneCode, setPhoneCode] = useState('+358');
   const { isShowing, toggle } = useModal();
   const { isShowing: isOpenRegisForm, toggle: toggleRegisForm } = useModal();
 
   const mockOptions = [
-    { value: '1', displayValue: 'Åland Islands (+358)' },
-    { value: '2', displayValue: 'Albania (+355)' },
-    { value: '3', displayValue: 'Algeria (+213)' },
-    { value: '4', displayValue: 'American Samoa (+1)' },
-    { value: '5', displayValue: 'Andorra (+376)' },
-    { value: '6', displayValue: 'Angola (+244)' },
-    { value: '7', displayValue: 'Antigua & Barbuda (+1)' },
-    { value: '8', displayValue: 'Armenia (+374)' },
-    { value: '9', displayValue: 'Argentina (+54)' },
-    { value: '10', displayValue: 'Australia (+61)' },
-    { value: '1', displayValue: 'Åland Islands (+358)' },
-    { value: '2', displayValue: 'Albania (+355)' },
-    { value: '3', displayValue: 'Algeria (+213)' },
-    { value: '4', displayValue: 'American Samoa (+1)' },
-    { value: '5', displayValue: 'Andorra (+376)' },
-    { value: '6', displayValue: 'Angola (+244)' },
-    { value: '7', displayValue: 'Antigua & Barbuda (+1)' },
-    { value: '8', displayValue: 'Armenia (+374)' },
-    { value: '9', displayValue: 'Argentina (+54)' },
-    { value: '10', displayValue: 'Australia (+61)' },
+    { displayValue: 'Åland Islands (+358)', value: '+358' },
+    { displayValue: 'Albania (+355)', value: '+353' },
+    { displayValue: 'Armenia (+374)', value: '+374' },
+    { displayValue: 'Aruba (+297)', value: '+297' },
+    { displayValue: 'Australia (+61)', value: '+21' },
+    { displayValue: 'Austria (+43)', value: '+33' },
+    { displayValue: 'Azerbaijan (+994)', value: '+914' },
+    { displayValue: 'Bahamas (+1)', value: '+12' },
+    { displayValue: 'Bahrain (+973)', value: '+352' },
+    { displayValue: 'Australia (+61)', value: '+61' },
+    { displayValue: 'Austria (+43)', value: '+43' },
+    { displayValue: 'Azerbaijan (+994)', value: '+994' },
+    { displayValue: 'Bahamas (+1)', value: '+1' },
+    { displayValue: 'Bahrain (+973)', value: '+355' },
   ];
 
   const {
@@ -77,10 +76,9 @@ const Navbar = ({ isDetailLayout = false }) => {
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => {};
-
-  console.log(watch('phone'));
-
+  const onSubmit = (data) => {
+    console.log(errors);
+  };
   return (
     <section
       className={cx('container', isDetailLayout ? 'sm' : 'lg')}
@@ -164,23 +162,27 @@ const Navbar = ({ isDetailLayout = false }) => {
           <div className={cx('welcome-section')}>
             <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
 
-            {/* <Input type='text' label='Phone number' /> */}
             <form
               className={cx('welcome-form')}
               onSubmit={handleSubmit(onSubmit)}
             >
-              <Select
-                className={cx('welcome-select')}
-                label='Country/Region'
-                options={mockOptions}
-              />
-              <input
-                className={cx('welcome-input')}
-                type='number'
-                {...register('phone')}
-              />
+              <div className={cx('form-container')}>
+                <Select
+                  className={cx('welcome-select')}
+                  label='Country/Region'
+                  onChange={setPhoneCode}
+                  options={mockOptions}
+                />
+                <Input
+                  type='number'
+                  errors={errors}
+                  label='Phone number'
+                  prefix={phoneCode}
+                  register={register('phone')}
+                />
+              </div>
               {errors.phone ? (
-                <label className={cx('text-danger')}>
+                <label className={cx('text-danger', 'welcome-hint')}>
                   <DangerIcon /> {errors.phone?.message}
                 </label>
               ) : (
@@ -201,7 +203,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               className={cx('alternative-btn')}
               isRound={true}
               scaleOnClick={true}
-              icon={<FacebookIcon />}
+              leftIcon={<FacebookIcon />}
             >
               Continue with Facebook
             </Button>
@@ -209,7 +211,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               className={cx('alternative-btn')}
               isRound={true}
               scaleOnClick={true}
-              icon={<GoogleIcon />}
+              leftIcon={<GoogleIcon />}
             >
               Continue with Google
             </Button>
@@ -217,7 +219,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               className={cx('alternative-btn')}
               isRound={true}
               scaleOnClick={true}
-              icon={<AppleIcon />}
+              leftIcon={<AppleIcon />}
             >
               Continue with Apple
             </Button>
@@ -225,7 +227,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               className={cx('alternative-btn')}
               isRound={true}
               scaleOnClick={true}
-              icon={<GmailIcon />}
+              leftIcon={<GmailIcon />}
             >
               Continue with Gmail
             </Button>

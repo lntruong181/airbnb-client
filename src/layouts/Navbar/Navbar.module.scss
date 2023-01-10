@@ -287,20 +287,16 @@
     transform: translate(-50%, 50%);
   }
 }
+.form-container {
+  border: 1px solid var(--icon-grey);
+  border-radius: 0.8rem;
+
+  overflow: hidden;
+}
 .welcome-select {
   border-radius: 0.8rem 0.8rem 0 0;
 }
-.welcome-input {
-  padding: 1rem;
-  position: relative;
-  width: 100%;
-  padding: 1.75rem 1rem;
-  border: 1px solid var(--text-color);
-  border-top: none;
-  border-radius: 0 0 0.8rem 0.8rem;
-  z-index: 1;
-  font-size: 1.6rem;
-}
+
 .text-danger {
   display: flex;
   gap: 1rem;
