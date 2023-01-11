@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -24,17 +24,18 @@ import {
   AppleIcon,
   GmailIcon,
 } from '@/assets/svgs';
-import { useGoogleAuth } from '@/hooks/useGoogleAuth';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import Select from '@/components/Select';
 import Input from '@/components/Input';
+import { useGoogleLogin } from '@react-oauth/google';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
-import { useEffect } from 'react';
+import { setData } from '@/utils/storage';
 
 const cx = classNames.bind(styles);
+
 const schema = yup.object().shape({
   phone: yup
     .string()
@@ -61,11 +62,12 @@ const mockOptions = [
   { displayValue: 'Bahamas (+1)', value: '+1' },
   { displayValue: 'Bahrain (+973)', value: '+355' },
 ];
+
 const Navbar = ({ isDetailLayout = false }) => {
+  const navigate = useNavigate();
   const [phoneCode, setPhoneCode] = useState('+358');
   const { isShowing, toggle } = useModal();
   const { isShowing: isOpenRegisForm, toggle: toggleRegisForm } = useModal();
-  const { signIn, isSignedIn } = useGoogleAuth();
   const {
     register,
     handleSubmit,
@@ -75,12 +77,13 @@ const Navbar = ({ isDetailLayout = false }) => {
     resolver: yupResolver(schema),
   });
 
-  const handleSignIn = () => {
-    const googleUser = signIn();
-    console.log('🚀 ~ googleUser', googleUser);
-  };
-
   const onSubmit = (phoneNumber) => {};
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      setData('token', tokenResponse.access_token);
+      navigate(0);
+    },
+  });
   return (
     <section
       className={cx('container', isDetailLayout ? 'sm' : 'lg')}
@@ -163,7 +166,6 @@ const Navbar = ({ isDetailLayout = false }) => {
           </div>
           <div className={cx('welcome-section')}>
             <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
-
             <form
               className={cx('welcome-form')}
               onSubmit={handleSubmit(onSubmit)}
@@ -214,7 +216,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               className={cx('alternative-btn')}
               isRound={true}
               scaleOnClick={true}
-              onClick={handleSignIn}
+              onClick={() => login()}
               leftIcon={<GoogleIcon />}
             >
               Continue with Google

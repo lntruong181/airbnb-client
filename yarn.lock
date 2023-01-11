@@ -1751,6 +1751,11 @@
   dependencies:
     "@babel/runtime" "^7.6.2"
 
+"@react-oauth/google@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.npmjs.org/@react-oauth/google/-/google-0.5.1.tgz"
+  integrity sha512-XCMMke24klAHIVnrZAMibodyjSUsxBOJ+vO5yvRptWC2Vnq02uLUnydjtIdCzCUIAxbvbFbQWZxG0xF0Y8GtHA==
+
 "@redux-saga/core@^1.2.2":
   version "1.2.2"
   resolved "https://registry.npmjs.org/@redux-saga/core/-/core-1.2.2.tgz"
