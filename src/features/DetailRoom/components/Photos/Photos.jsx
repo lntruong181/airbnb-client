@@ -49,14 +49,14 @@ const Photos = () => {
           <Button
             shadowOnHover='true'
             className={cx('interact', 'flex')}
-            icon={<ShareIcon />}
+            leftIcon={<ShareIcon />}
           >
             <u>Share</u>
           </Button>
           <Button
             shadowOnHover='true'
             className={cx('interact', 'flex')}
-            icon={<SmallHeartIcon />}
+            leftIcon={<SmallHeartIcon />}
           >
             <u>Save</u>
           </Button>
@@ -113,7 +113,12 @@ const Photos = () => {
             Show all photos
           </Button>
         </div>
-        <Modal isOpen={isShowing} onClose={toggle} type={'large'}>
+        <Modal
+          className={cx('more-box')}
+          isOpen={isShowing}
+          onClose={toggle}
+          type={'large'}
+        >
           <div className={cx('more-offer')}>
             <div className={cx('close-section')}>
               <div className={cx('close-section-box')}>

@@ -24,7 +24,7 @@ import {
   AppleIcon,
   GmailIcon,
 } from '@/assets/svgs';
-
+import { useGoogleAuth } from '@/hooks/useGoogleAuth';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import Select from '@/components/Select';
@@ -32,6 +32,7 @@ import Input from '@/components/Input';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
+import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 const schema = yup.object().shape({
@@ -44,41 +45,42 @@ const schema = yup.object().shape({
       'That phone number is either too short or too long. Make sure you have entered the right number and try again.'
     ),
 });
-
+const mockOptions = [
+  { displayValue: 'Åland Islands (+358)', value: '+358' },
+  { displayValue: 'Albania (+355)', value: '+353' },
+  { displayValue: 'Armenia (+374)', value: '+374' },
+  { displayValue: 'Aruba (+297)', value: '+297' },
+  { displayValue: 'Australia (+61)', value: '+21' },
+  { displayValue: 'Austria (+43)', value: '+33' },
+  { displayValue: 'Azerbaijan (+994)', value: '+914' },
+  { displayValue: 'Bahamas (+1)', value: '+12' },
+  { displayValue: 'Bahrain (+973)', value: '+352' },
+  { displayValue: 'Australia (+61)', value: '+61' },
+  { displayValue: 'Austria (+43)', value: '+43' },
+  { displayValue: 'Azerbaijan (+994)', value: '+994' },
+  { displayValue: 'Bahamas (+1)', value: '+1' },
+  { displayValue: 'Bahrain (+973)', value: '+355' },
+];
 const Navbar = ({ isDetailLayout = false }) => {
   const [phoneCode, setPhoneCode] = useState('+358');
   const { isShowing, toggle } = useModal();
   const { isShowing: isOpenRegisForm, toggle: toggleRegisForm } = useModal();
-
-  const mockOptions = [
-    { displayValue: 'Åland Islands (+358)', value: '+358' },
-    { displayValue: 'Albania (+355)', value: '+353' },
-    { displayValue: 'Armenia (+374)', value: '+374' },
-    { displayValue: 'Aruba (+297)', value: '+297' },
-    { displayValue: 'Australia (+61)', value: '+21' },
-    { displayValue: 'Austria (+43)', value: '+33' },
-    { displayValue: 'Azerbaijan (+994)', value: '+914' },
-    { displayValue: 'Bahamas (+1)', value: '+12' },
-    { displayValue: 'Bahrain (+973)', value: '+352' },
-    { displayValue: 'Australia (+61)', value: '+61' },
-    { displayValue: 'Austria (+43)', value: '+43' },
-    { displayValue: 'Azerbaijan (+994)', value: '+994' },
-    { displayValue: 'Bahamas (+1)', value: '+1' },
-    { displayValue: 'Bahrain (+973)', value: '+355' },
-  ];
-
+  const { signIn, isSignedIn } = useGoogleAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => {
-    console.log(errors);
+
+  const handleSignIn = () => {
+    const googleUser = signIn();
+    console.log('🚀 ~ googleUser', googleUser);
   };
+
+  const onSubmit = (phoneNumber) => {};
   return (
     <section
       className={cx('container', isDetailLayout ? 'sm' : 'lg')}
@@ -199,6 +201,7 @@ const Navbar = ({ isDetailLayout = false }) => {
                 value={'Continue'}
               />
             </form>
+
             <Button
               className={cx('alternative-btn')}
               isRound={true}
@@ -211,6 +214,7 @@ const Navbar = ({ isDetailLayout = false }) => {
               className={cx('alternative-btn')}
               isRound={true}
               scaleOnClick={true}
+              onClick={handleSignIn}
               leftIcon={<GoogleIcon />}
             >
               Continue with Google

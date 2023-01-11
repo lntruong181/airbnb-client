@@ -1,12 +1,11 @@
 import { all } from 'redux-saga/effects';
 
 import imageSaga from './image/imageSaga';
-
 import tourSaga from './tours/tourSaga';
+import authSaga from './auth/authSaga';
 
 function* rootSaga() {
-  console.log('[SAGA] - ROOT start 💥💥💥');
-  yield all([tourSaga(), imageSaga()]);
+  yield all([tourSaga(), imageSaga(), authSaga()]);
 }
 
 export default rootSaga;

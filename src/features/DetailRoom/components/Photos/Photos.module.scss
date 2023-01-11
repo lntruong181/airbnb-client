@@ -144,6 +144,9 @@
 }
 
 // MODAL
+.more-box {
+  border-radius: 0;
+}
 
 .more-offer {
   overflow: hidden;
@@ -176,7 +179,8 @@
 }
 .album-column {
   margin: auto;
-  max-width: 50vw;
+  width: 50vw;
+  max-width: 74rem;
   flex: 50%;
   padding: 0 4px;
 }
@@ -187,5 +191,12 @@
 }
 .album-image {
   margin-top: 8px;
-  vertical-align: middle;
+  object-fit: cover;
+  vertical-align: bottom;
+
+  height: 500px;
+
+  &:nth-child(odd) {
+    width: 20vw;
+  }
 }
