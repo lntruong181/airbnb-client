@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Link, redirect, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -29,10 +29,11 @@ import Modal from '@/components/Modal';
 import Select from '@/components/Select';
 import Input from '@/components/Input';
 import { useGoogleLogin } from '@react-oauth/google';
+import { setData } from '@/utils/storage';
+import authService from '@/services/auth.service';
 
 import styles from './Navbar.module.scss';
 import 'tippy.js/dist/tippy.css';
-import { setData } from '@/utils/storage';
 
 const cx = classNames.bind(styles);
 
@@ -47,7 +48,7 @@ const schema = yup.object().shape({
     ),
 });
 const mockOptions = [
-  { displayValue: 'Åland Islands (+358)', value: '+358' },
+  { displayValue: 'Viet Nam (+84)', value: '+84' },
   { displayValue: 'Albania (+355)', value: '+353' },
   { displayValue: 'Armenia (+374)', value: '+374' },
   { displayValue: 'Aruba (+297)', value: '+297' },
@@ -65,7 +66,8 @@ const mockOptions = [
 
 const Navbar = ({ isDetailLayout = false }) => {
   const navigate = useNavigate();
-  const [phoneCode, setPhoneCode] = useState('+358');
+  const [phoneCode, setPhoneCode] = useState('+84');
+  const [isOpenVerifyForm, setIsOpenVerifyForm] = useState(true);
   const { isShowing, toggle } = useModal();
   const { isShowing: isOpenRegisForm, toggle: toggleRegisForm } = useModal();
   const {
@@ -77,7 +79,14 @@ const Navbar = ({ isDetailLayout = false }) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (phoneNumber) => {};
+  const onSubmit = async ({ phone }) => {
+    const phoneNumber = phoneCode + phone;
+    const response = await authService.signUp({
+      account: phoneNumber,
+    });
+    if (response.msg) {
+    }
+  };
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       setData('token', tokenResponse.access_token);
@@ -162,83 +171,90 @@ const Navbar = ({ isDetailLayout = false }) => {
             <Icon onClick={toggleRegisForm}>
               <CancelIcon />
             </Icon>
-            <h3 className={cx('registration-tittle')}>Log in or sign up</h3>
+            <h3 className={cx('registration-tittle')}>
+              {isOpenVerifyForm ? 'Confirm your number' : 'Log in or sign up'}
+            </h3>
           </div>
-          <div className={cx('welcome-section')}>
-            <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
-            <form
-              className={cx('welcome-form')}
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <div className={cx('form-container')}>
-                <Select
-                  className={cx('welcome-select')}
-                  label='Country/Region'
-                  onChange={setPhoneCode}
-                  options={mockOptions}
-                />
-                <Input
-                  type='number'
-                  errors={errors}
-                  label='Phone number'
-                  prefix={phoneCode}
-                  register={register('phone')}
-                />
-              </div>
-              {errors.phone ? (
-                <label className={cx('text-danger', 'welcome-hint')}>
-                  <DangerIcon /> {errors.phone?.message}
-                </label>
-              ) : (
-                <p className={cx('welcome-hint')}>
-                  We’ll call or text you to confirm your number. Standard
-                  message and data rates apply.{' '}
-                  <span className={cx('highlight')}>Privacy Policy</span>
-                </p>
-              )}
+          {isOpenVerifyForm ? (
+            <div>
+              <p>Enter the code we sent over SMS to +84 903930892:</p>
+            </div>
+          ) : (
+            <div className={cx('welcome-section')}>
+              <h1 className={cx('welcome-tittle')}>Welcome to Airbnb</h1>
+              <form
+                className={cx('welcome-form')}
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <div className={cx('form-container')}>
+                  <Select
+                    className={cx('welcome-select')}
+                    label='Country/Region'
+                    onChange={setPhoneCode}
+                    options={mockOptions}
+                  />
+                  <Input
+                    type='number'
+                    errors={errors}
+                    label='Phone number'
+                    prefix={phoneCode}
+                    register={register('phone')}
+                  />
+                </div>
+                {errors.phone ? (
+                  <label className={cx('text-danger', 'welcome-hint')}>
+                    <DangerIcon /> {errors.phone?.message}
+                  </label>
+                ) : (
+                  <p className={cx('welcome-hint')}>
+                    We’ll call or text you to confirm your number. Standard
+                    message and data rates apply.{' '}
+                    <span className={cx('highlight')}>Privacy Policy</span>
+                  </p>
+                )}
 
-              <input
-                className={cx('welcome-btn')}
-                type='submit'
-                value={'Continue'}
-              />
-            </form>
+                <input
+                  className={cx('welcome-btn')}
+                  type='submit'
+                  value={'Continue'}
+                />
+              </form>
 
-            <Button
-              className={cx('alternative-btn')}
-              isRound={true}
-              scaleOnClick={true}
-              leftIcon={<FacebookIcon />}
-            >
-              Continue with Facebook
-            </Button>
-            <Button
-              className={cx('alternative-btn')}
-              isRound={true}
-              scaleOnClick={true}
-              onClick={() => login()}
-              leftIcon={<GoogleIcon />}
-            >
-              Continue with Google
-            </Button>
-            <Button
-              className={cx('alternative-btn')}
-              isRound={true}
-              scaleOnClick={true}
-              leftIcon={<AppleIcon />}
-            >
-              Continue with Apple
-            </Button>
-            <Button
-              className={cx('alternative-btn')}
-              isRound={true}
-              scaleOnClick={true}
-              leftIcon={<GmailIcon />}
-            >
-              Continue with Gmail
-            </Button>
-          </div>
-          <div className={cx('action-section')}></div>
+              <Button
+                className={cx('alternative-btn')}
+                isRound={true}
+                scaleOnClick={true}
+                leftIcon={<FacebookIcon />}
+              >
+                Continue with Facebook
+              </Button>
+              <Button
+                className={cx('alternative-btn')}
+                isRound={true}
+                scaleOnClick={true}
+                onClick={() => login()}
+                leftIcon={<GoogleIcon />}
+              >
+                Continue with Google
+              </Button>
+              <Button
+                className={cx('alternative-btn')}
+                isRound={true}
+                scaleOnClick={true}
+                leftIcon={<AppleIcon />}
+              >
+                Continue with Apple
+              </Button>
+              <Button
+                className={cx('alternative-btn')}
+                isRound={true}
+                scaleOnClick={true}
+                leftIcon={<GmailIcon />}
+              >
+                Continue with Gmail
+              </Button>
+            </div>
+          )}
         </div>
       </Modal>
 

@@ -1,11 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_ROUTE,
-  timeout: 5000,
-  headers: {
-    'Content-Type': 'Application/json',
-  },
+  baseURL: 'http://localhost:8080/api/v1',
 });
 
 const GET = (url, params) => {
@@ -15,11 +11,9 @@ const GET = (url, params) => {
     params,
   });
 };
-const POST = (url, data) => {
-  console.log('🚀 ~ data', data);
-  console.log('🚀 ~ url', url);
-  console.log('🚀 ~ instance.post(url, data);', instance.post(url, data));
-  return instance.post(url, data);
+const POST = async (url, data) => {
+  const response = await instance.post(url, data);
+  return response.data;
 };
 
 const PUT = (url, params, data) => {

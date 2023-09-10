@@ -5,6 +5,7 @@ import DetailLayout from '@/layouts/DetailLayout';
 import Booking from '@/features/Booking';
 import DetailRoom from '@/features/DetailRoom';
 import { ROUTE } from '@/enum/routes.enums';
+import DemoZalo from '@/features/DemoZalo';
 
 const AirbnbRoutes = () => {
   return (
@@ -26,6 +27,7 @@ const AirbnbRoutes = () => {
             </DetailLayout>
           }
         ></Route>
+        <Route path={ROUTE.DEMO} element={<DemoZalo />}></Route>
       </Routes>
     </Router>
   );
