@@ -1,7 +1,6 @@
 {
   "homepage": "http://lntruong.github.io/airbnb-client",
   "name": "air-bnb",
-  "proxy": "http://localhost:5000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,6 +41,8 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
