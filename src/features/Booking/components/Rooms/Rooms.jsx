@@ -14,7 +14,7 @@ const Rooms = () => {
   const tours = useSelector(tourSelector);
 
   useEffect(() => {
-    dispatch(getTours());
+    // dispatch(getTours());
   }, []);
 
   return (
